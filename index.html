@@ -24,10 +24,6 @@
         .service-icon {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-        .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23525252' fill-opacity='0.2'%3E%3Cpath d='M0 0h42v44H0zM17 20h25v24H17zM0 20h15v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            background-repeat: repeat;
-        }
     </style>
 </head>
 <body>
@@ -66,8 +62,7 @@
         <div class="container mx-auto max-w-5xl text-center md:flex md:items-center md:text-left md:space-x-12">
             <!-- Espacio para la imagen del usuario -->
             <div class="flex-shrink-0 mb-8 md:mb-0 md:w-1/3">
-                <!-- Por favor, reemplaza la siguiente URL con la URL de tu imagen -->
-                
+                <!--  -- no puedo usar la imagen del usuario, así que he puesto una de muestra. Puedes reemplazar el URL con tu foto. -->
                 <img src="https://placehold.co/400x500/171717/cccccc?text=TU+FOTO+AQU%C3%8D" alt="Yohn Sepúlveda, fundador de Construyendo Sueños SPA" class="rounded-xl shadow-xl w-full h-auto object-cover">
             </div>
             <div class="md:w-2/3">
@@ -173,9 +168,11 @@
         </div>
     </section>
 
-    <!-- Sección Testimonios -->
-    <section id="testimonios" class="py-16 sm:py-24 px-4 bg-blue-600 text-white bg-pattern">
-        <div class="container mx-auto text-center">
+    <!-- Sección Testimonios con fondo de imagen -->
+    <section id="testimonios" class="relative py-16 sm:py-24 px-4 text-white bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542382103306-03f56a635848?q=80&w=2670&auto=format&fit=crop');">
+        <!-- Overlay oscuro para mejorar la legibilidad del texto -->
+        <div class="absolute inset-0 bg-zinc-900 opacity-70"></div>
+        <div class="relative z-10 container mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">Lo que dicen nuestros clientes</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Testimonio 1 -->
@@ -209,7 +206,7 @@
             </p>
             <div class="contact-info text-lg sm:text-xl mb-10">
                 <p class="mb-2">📞 <strong class="font-bold">Teléfono / WhatsApp:</strong> <a href="https://wa.me/56948000057" class="text-blue-400 hover:underline">+56 9 48000057</a></p>
-                <p class="mb-2">📧 <strong class="font-bold">Correo:</strong> <a href="mailto:cosntruccionesdelsurcs@gmail.com" class="text-blue-400 hover:underline">cosntruccionesdelsurcs@gmail.com</a></p>
+                <p class="mb-2">📧 <strong class="font-bold">Correo:</strong> <a href="mailto:construccionesdelsurcs@gmail.com" class="text-blue-400 hover:underline">construccionesdelsurcs@gmail.com</a></p>
                 <p>🌐 <strong class="font-bold">Redes Sociales:</strong> <a href="https://www.facebook.com/profile.php?id=61579061443136" target="_blank" class="text-blue-400 hover:underline">Facebook</a> | <a href="https://www.instagram.com/construccionesdelsur.cs?igsh=MTB6cGJrMngzbWRveg==" target="_blank" class="text-blue-400 hover:underline">Instagram</a></p>
             </div>
             <!-- Formulario de Contacto (usando Formspree) -->

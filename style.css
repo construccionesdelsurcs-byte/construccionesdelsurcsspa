@@ -339,4 +339,35 @@ footer {
     border: none;
     border-radius: 8px;
     font-size: 1em;
-    background-color:
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form ::placeholder {
+    color: #777;
+}
+
+.contact-form .disclaimer {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-top: 10px;
+    text-align: center;
+}

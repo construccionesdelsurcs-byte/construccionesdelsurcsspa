@@ -3,155 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Construyendo Sueños SPA. Servicios de construcción, remodelaciones, carpintería, electricidad y gasfitería. Expertos en el mantenimiento de tu hogar, oficina o local comercial.">
+  <meta name="description" content="Construyendo Sueños SPA. Constructor Civil, carpintero y especialista en remodelaciones, electricidad y gasfitería. Servicios de construcción y plan anual de mantenimiento.">
   <title>Construyendo Sueños SPA</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      border-bottom: 2px solid #f39c12;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+    .service-list, .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .service-item, .project-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .project-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #f39c12;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e67e22;
+    }
+    footer {
+      text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 25px;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="header-content">
-    <h1>Construyendo Sueños SPA</h1>
-    <p>Tu proyecto, nuestra pasión. Soluciones integrales para la construcción y mantención de tu propiedad o nueva propiedad.</p>
-    <a href="#contacto" class="btn">Solicita tu Presupuesto Ahora</a>
-  </div>
+<header>
+  <h1>Construyendo Sueños SPA</h1>
+  <p>Tu hogar seguro, confiable y bien mantenido</p>
 </header>
 
-<nav class="navbar">
+<nav>
   <a href="#quienes">Quiénes Somos</a>
   <a href="#servicios">Servicios</a>
   <a href="#plan">Plan Anual</a>
   <a href="#proyectos">Proyectos</a>
-  <a href="#testimonios">Testimonios</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
-<section id="quienes" class="section">
-  <h2>Quiénes Somos</h2>
-  <div class="content">
-    <p>En **Construyendo Sueños SPA**, liderada por Yohn Sepúlveda, nos dedicamos a entregar soluciones confiables y de calidad. Como **Constructor Civil titulado** y **carpintero de oficio**, combinamos la formación académica con la experiencia práctica. Nuestro compromiso es garantizar resultados duraderos y seguros para tu hogar, oficina o local comercial.</p>
-  </div>
+<section id="quienes">
+  <h2 style="text-align: center;">Quiénes Somos</h2>
+  <p style="text-align: justify;">En **Construyendo Sueños SPA** nos dedicamos a entregar soluciones confiables y de calidad en el área de la construcción y el mantenimiento del hogar. Nuestro fundador, **Yohn Sepúlveda**, es **Constructor Civil titulado**, con más de 3 años de experiencia en proyectos independientes, además de ser **carpintero de oficio** y estudiante de **Ingeniería en Electricidad**.</p>
+  <p style="text-align: justify;">Esta combinación de formación académica y experiencia práctica nos permite ofrecer un servicio integral, adaptado a las necesidades reales de cada cliente. Nuestro compromiso es garantizar resultados duraderos, seguros y estéticamente impecables, ya sea en tu casa, oficina o local comercial.</p>
 </section>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Construyendo Sueños SPA. Servicios de construcción, remodelaciones, carpintería, electricidad y gasfitería. Expertos en el mantenimiento de tu hogar, oficina o local comercial.">
-  <title>Construyendo Sueños SPA</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="hero">
-  <div class="header-content">
-    <h1>Construyendo Sueños SPA</h1>
-    <p>Tu proyecto, nuestra pasión. Soluciones integrales para la construcción y mantención de tu propiedad o nueva propiedad.</p>
-    <a href="#contacto" class="btn">Solicita tu Presupuesto Ahora</a>
-  </div>
-</header>
-
-<nav class="navbar">
-  <a href="#quienes">Quiénes Somos</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#plan">Plan Anual</a>
-  <a href="#proyectos">Proyectos</a>
-  <a href="#testimonios">Testimonios</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<section id="quienes" class="section">
-  <h2>Quiénes Somos</h2>
-  <div class="content">
-    <p>En **Construyendo Sueños SPA**, liderada por Yohn Sepúlveda, nos dedicamos a entregar soluciones confiables y de calidad. Como **Constructor Civil titulado** y **carpintero de oficio**, combinamos la formación académica con la experiencia práctica. Nuestro compromiso es garantizar resultados duraderos y seguros para tu hogar, oficina o local comercial.</p>
-  </div>
-</section>
-
-<section id="servicios" class="section">
-  <h2>Servicios</h2>
-  <div class="grid-container">
-    <div class="grid-item">
-      <h3>🏠 Construcción y Remodelaciones</h3>
-      <p>...</p>
-    </div>
-    <div class="grid-item">
-      <h3>🪚 Carpintería y Terminaciones</h3>
-      <p>.../p>
+<section id="servicios">
+  <h2 style="text-align: center;">Servicios</h2>
+  <div class="service-list">
+    <div class="service-item">
+      <h3>🏠 Construcción y Remodelaciones</h3>
+      <p>Diseño, ejecución y mejoras en viviendas, oficinas y espacios comerciales.</p>
     </div>
-    <div class="grid-item">
+    <div class="service-item">
+      <h3>🪚 Carpintería y Terminaciones</h3>
+      <p>Fabricación e instalación de muebles, puertas, closets y soluciones a medida.</p>
+    </div>
+    <div class="service-item">
       <h3>🚰 Gasfitería e Instalaciones PPR</h3>
       <p>Reparaciones de filtraciones, cambios de cañerías e instalaciones de agua potable.</p>
     </div>
-    <div class="grid-item">
+    <div class="service-item">
       <h3>🎨 Pintura y Acabados</h3>
-      <p>Proyectos completos de pintura interior y exterior, y restauración de superficies.</p>
+      <p>Desde pequeños retoques hasta proyectos completos de pintura interior y exterior.</p>
     </div>
-    <div class="grid-item">
+    <div class="service-item">
       <h3>⚡ Electricidad Básica</h3>
       <p>Instalación de enchufes, luminarias, mantenciones y mejoras en redes eléctricas.</p>
     </div>
   </div>
 </section>
 
-<section id="plan" class="section dark">
-  <h2>Nuestro Plan Anual de Mantenimiento</h2>
-  <div class="content">
-    <p>Con un **único pago anual**, obtienes la tranquilidad de un respaldo profesional para tu propiedad. Este plan único en el mercado incluye:</p>
-    <ul>
-      <li>✔ Visitas programadas de mantenimiento preventivo.</li>
-      <li>✔ Reparaciones menores en electricidad, gasfitería o carpintería.</li>
-      <li>✔ Descuentos especiales en proyectos de remodelación o construcción.</li>
-      <li>✔ Atención prioritaria en casos urgentes.</li>
-    </ul>
-    <a href="#contacto" class="btn">Contrata la Tranquilidad Anual</a>
-  </div>
+<section id="plan">
+  <h2 style="text-align: center;">Nuestro Innovador Plan Anual de Mantenimiento</h2>
+  <p style="text-align: center;">Sabemos que los hogares necesitan cuidado constante. Por eso, con un único pago anual, nuestros clientes obtienen:</p>
+  <ul style="max-width: 600px; margin: auto;">
+    <li>✔ Visitas programadas de mantenimiento preventivo.</li>
+    <li>✔ Reparaciones menores en electricidad, gasfitería o carpintería.</li>
+    <li>✔ Descuentos especiales en proyectos de remodelación o construcción mayor.</li>
+    <li>✔ Atención prioritaria en casos urgentes.</li>
+  </ul>
+  <p style="text-align: center;"><a href="#contacto" class="btn">¡Únete a la tranquilidad anual!</a></p>
 </section>
 
-<section id="proyectos" class="section">
-  <h2>Nuestros Proyectos</h2>
-  <div class="grid-container project-gallery">
+<section id="proyectos">
+  <h2 style="text-align: center;">Galería de Proyectos</h2>
+  <div class="project-gallery">
     <div class="project-item">
-      <img src="https://via.placeholder.com/300x200?text=Cocina+Remodelada" alt="Proyecto de Remodelación de Cocina">
-      <p>Remodelación de cocina moderna.</p>
+      <img src="https://via.placeholder.com/300x200?text=Proyecto+1" alt="Descripción de tu proyecto 1">
+      <p><strong>Remodelación de cocina.</strong> Cambio de pisos, muebles y pintura.</p>
     </div>
     <div class="project-item">
-      <img src="https://via.placeholder.com/300x200?text=Terraza+de+Madera" alt="Proyecto de Terraza de Madera">
-      <p>Construcción de terraza de madera.</p>
+      <img src="https://via.placeholder.com/300x200?text=Proyecto+2" alt="Descripción de tu proyecto 2">
+      <p><strong>Instalación de sistema eléctrico.</strong> Nuevo tablero y luminarias LED.</p>
     </div>
     <div class="project-item">
-      <img src="https://via.placeholder.com/300x200?text=Pintura+Exterior" alt="Proyecto de Pintura Exterior">
-      <p>Trabajo completo de pintura exterior.</p>
+      <img src="https://via.placeholder.com/300x200?text=Proyecto+3" alt="Descripción de tu proyecto 3">
+      <p><strong>Construcción de terraza.</strong> Deck de madera y cerramiento.</p>
     </div>
   </div>
+  <p style="text-align: center;"><a href="#contacto" class="btn">Ver más trabajos</a></p>
 </section>
 
-<section id="testimonios" class="section">
-  <h2>Lo que dicen nuestros clientes</h2>
-  <div class="testimonial-card">
-    <p>"Yohn y su equipo remodelaron mi baño completo y el resultado superó mis expectativas. Son profesionales, transparentes y muy ordenados. ¡Totalmente recomendados!"</p>
-    <p class="testimonial-author">- Francisco L., Cliente de Santiago</p>
-  </div>
-</section>
-
-<section id="contacto" class="section dark">
-  <h2>Contáctanos y Pide tu Presupuesto</h2>
-  <div class="contact-info">
-    <p>📞 **Teléfono / WhatsApp:** <a href="https://wa.me/569XXXXXXXX">+56 9 XXXXXXXX</a></p>
-    <p>📧 **Correo:** tuemail@ejemplo.com</p>
-    <p>🌐 **Redes Sociales:** <a href="https://www.facebook.com/construccionesdelsurcs" target="_blank">Facebook</a> | <a href="https://www.instagram.com/construccionesdelsurcs" target="_blank">Instagram</a></p>
-  </div>
-  <form id="contactForm" class="contact-form">
-    <input type="text" name="name" placeholder="Tu Nombre" required>
-    <input type="email" name="email" placeholder="Tu Correo" required>
-    <textarea name="message" placeholder="¿Cómo podemos ayudarte?" rows="4" required></textarea>
-    <button type="submit" class="btn">Enviar Mensaje</button>
-    <p class="disclaimer">*(Este formulario requiere una configuración adicional para funcionar. Te guiaré en el siguiente paso).*</p>
-  </form>
+<section id="contacto">
+  <h2 style="text-align: center;">Contacto</h2>
+  <p style="text-align: center;">Puedes comunicarte con nosotros directamente o seguirnos en nuestras redes sociales:</p>
+  <p style="text-align: center;">
+    📞 **Teléfono / WhatsApp:** <a href="https://wa.me/569XXXXXXXX">+56 9 XXXXXXXX</a><br>
+    📧 **Correo:** tuemail@ejemplo.com<br>
+    🌐 **Redes Sociales:** <a href="https://www.facebook.com/construccionesdelsurcs" target="_blank">Facebook</a> | <a href="https://www.instagram.com/construccionesdelsurcs" target="_blank">Instagram</a>
+  </p>
 </section>
 
 <footer>
-  <p>&copy; 2025 Construyendo Sueños SPA - Todos los derechos reservados</p>
+  <p>© 2025 Construyendo Sueños SPA - Todos los derechos reservados</p>
 </footer>
 
 </body>

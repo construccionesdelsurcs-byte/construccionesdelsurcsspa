@@ -51,7 +51,7 @@
     <section id="about" class="py-16 px-4">
         <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
             <h2 class="text-4xl font-bold mb-6 text-blue-600">Nuestra Historia: La Pasión por lo Bien Hecho</h2>
-            <p class="text-lg text-gray-700 mb-4 leading-relaxed">No solo construimos; creamos. En cada proyecto, ponemos nuestra alma, nuestra experiencia y un profundo amor por el detalle. Nuestro viaje comenzó con la simple voluntad de aprender y superarnos, enfrentando cada desafío como una oportunidad para crecer. Lo que una vez fue un simple trabajo, se convirtió en una **profesión**. Hoy, cada remodelación, cada pared y cada acabado es un reflejo de nuestra dedicación y el compromiso inquebrantable de entregar un trabajo impecable. Porque tu hogar o negocio no es solo un espacio, es una extensión de tu vida, y merece la máxima calidad.</p>
+            <p class="text-lg text-gray-700 mb-4 leading-relaxed">No solo construimos; creamos. En cada proyecto, ponemos nuestra alma, nuestra experiencia y un profundo amor por el detalle. Nuestro viaje comenzó con la simple voluntad de aprender y superarnos, enfrentando cada desafío como una oportunidad para crecer. Lo que una vez fue un simple trabajo, se convirtió en una profesión. Hoy, cada remodelación, cada pared y cada acabado es un reflejo de nuestra dedicación y el compromiso inquebrantable de entregar un trabajo impecable. Porque tu hogar o negocio no es solo un espacio, es una extensión de tu vida, y merece la máxima calidad.</p>
         </div>
     </section>
 
@@ -107,13 +107,13 @@
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-right" data-aos-delay="200">
                     <div class="text-5xl text-blue-500 mb-4">⚡</div>
                     <h3 class="text-2xl font-semibold mb-2">Servicios Eléctricos Certificados</h3>
-                    <p class="text-gray-600">Ofrecemos soluciones eléctricas seguras y eficientes. Estamos inscritos en la **Superintendencia de Electricidad y Combustibles (SEC)**, lo que garantiza un trabajo 100% legal y profesional.</p>
+                    <p class="text-gray-600">Ofrecemos soluciones eléctricas seguras y eficientes. Estamos inscritos en la Superintendencia de Electricidad y Combustibles (SEC), lo que garantiza un trabajo 100% legal y profesional.</p>
                 </div>
                 <!-- NUEVO SERVICIO: Asesoría Inmobiliaria -->
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-5xl text-blue-500 mb-4">🔍</div>
                     <h3 class="text-2xl font-semibold mb-2">Asesoría Inmobiliaria Profesional</h3>
-                    <p class="text-gray-600">Antes de comprar tu nueva casa, te ofrecemos un servicio de inspección pre-entrega. Te proporcionamos un **informe técnico con bases legales** para que tu inversión esté segura. Ideal para clientes y abogados.</p>
+                    <p class="text-gray-600">Antes de comprar tu nueva casa, te ofrecemos un servicio de inspección pre-entrega. Te proporcionamos un informe técnico con bases legales para que tu inversión esté segura. Ideal para clientes y abogados.</p>
                 </div>
                 <!-- NUEVO SERVICIO: Asesoramiento en compras -->
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-left" data-aos-delay="200">
@@ -297,7 +297,7 @@
             
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700">Tu mensaje</label>
-                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-lg"></textarea>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg"></textarea>
                         </div>
             
                         <input type="hidden" name="_subject" value="Nuevo mensaje de contacto!">
@@ -307,8 +307,8 @@
                         </button>
                     </form>
             
-                    <div id="successMessage" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md relative" role="alert">
-                        <span class="block sm:inline">¡Gracias! Tu mensaje ha sido enviado.</span>
+                    <div id="statusMessage" class="hidden mt-6 px-4 py-3 rounded-md relative" role="alert">
+                        <span class="block sm:inline"></span>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,14 @@
             event.preventDefault();
             
             const form = event.target;
-            const statusMessage = document.getElementById('successMessage');
+            const statusDiv = document.getElementById('statusMessage');
+            const statusSpan = statusDiv.querySelector('span');
+
+            // Resetear el estado
+            statusDiv.classList.add('hidden');
+            statusDiv.classList.remove('bg-green-100', 'border-green-400', 'text-green-700');
+            statusDiv.classList.remove('bg-red-100', 'border-red-400', 'text-red-700');
+            statusSpan.textContent = '';
 
             try {
                 const response = await fetch(form.action, {
@@ -344,20 +351,26 @@
 
                 if (response.ok) {
                     form.reset();
-                    statusMessage.classList.remove('hidden');
+                    statusDiv.classList.remove('hidden');
+                    statusDiv.classList.add('bg-green-100', 'border-green-400', 'text-green-700');
+                    statusSpan.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
                     setTimeout(() => {
-                        statusMessage.classList.add('hidden');
+                        statusDiv.classList.add('hidden');
                     }, 5000);
                 } else {
                     const data = await response.json();
+                    let message = "¡Hubo un problema al enviar el formulario!";
                     if (data.errors) {
-                        alert(data.errors.map(error => error.message).join(', '));
-                    } else {
-                        alert("¡Hubo un problema al enviar el formulario!");
+                        message = data.errors.map(error => error.message).join(', ');
                     }
+                    statusDiv.classList.remove('hidden');
+                    statusDiv.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
+                    statusSpan.textContent = message;
                 }
             } catch (error) {
-                alert("¡Error de red! Por favor, revisa tu conexión.");
+                statusDiv.classList.remove('hidden');
+                statusDiv.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
+                statusSpan.textContent = "¡Error de red! Por favor, revisa tu conexión.";
             }
         });
     </script>

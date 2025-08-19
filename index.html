@@ -15,6 +15,10 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Estilo personalizado para un degradado de fondo en la sección Hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -27,140 +31,214 @@
                 <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Nosotros</a>
                 <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Servicios</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Portafolio</a>
-                <a href="#plans" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Planes</a>
                 <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <!-- Sección principal (Hero) -->
-    <header class="bg-blue-600 text-white py-20 px-4 text-center rounded-b-3xl">
-        <div class="container mx-auto" data-aos="fade-up">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-md">Construyendo Sueños SPA</h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8 drop-shadow-md">Transformando espacios, un proyecto a la vez.</p>
+    <!-- Sección principal (Hero) con un diseño más profesional -->
+    <header class="hero-bg text-white py-20 px-4 rounded-b-3xl relative overflow-hidden">
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">¡Construimos tus Sueños!</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8 drop-shadow-md">Tu espacio, nuestra pasión. Transforma tu hogar o negocio en la obra de tus sueños con profesionalismo, dedicación y un acabado impecable.</p>
+            <a href="#contact" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 shadow-xl">
+                ¡Hagámoslo realidad!
+            </a>
         </div>
     </header>
 
-    <!-- Sección "Sobre Nosotros" -->
+    <!-- Sección "Sobre Nosotros" con un enfoque más humano y pasional -->
     <section id="about" class="py-16 px-4">
         <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6 text-blue-600">Nuestra Historia</h2>
-            <p class="text-lg text-gray-700 mb-4 leading-relaxed">Cada gran proyecto comienza con una base sólida, pero nuestro viaje no empezó en un taller, sino en la simple voluntad de aprender y superarnos. Recuerdo los días en los que cada herramienta era un misterio y cada tarea, un desafío. A menudo, el camino no fue fácil; hubo proyectos que nos pusieron a prueba, largas jornadas que nos exigieron el máximo y momentos de incertidumbre sobre si estábamos en el camino correcto. Pero en cada obstáculo, encontramos una lección.</p>
-            <p class="text-lg text-gray-700 leading-relaxed">Fue en esas luchas donde descubrimos el verdadero valor de la **perseverancia**. Aprendimos que una pared no es solo yeso y metal, sino el resultado de la paciencia, la precisión y la dedicación. Lo que una vez fue un simple trabajo, se convirtió en una vocación. Hoy, cada proyecto que asumimos es una oportunidad para honrar esa lucha y demostrar lo que la experiencia y el compromiso pueden lograr. No se trata solo de construir o remodelar, sino de crear espacios que reflejen el cuidado y la calidad que nos definen.</p>
+            <h2 class="text-4xl font-bold mb-6 text-blue-600">Nuestra Historia: La Pasión por lo Bien Hecho</h2>
+            <p class="text-lg text-gray-700 mb-4 leading-relaxed">No solo construimos; creamos. En cada proyecto, ponemos nuestra alma, nuestra experiencia y un profundo amor por el detalle. Nuestro viaje comenzó con la simple voluntad de aprender y superarnos, enfrentando cada desafío como una oportunidad para crecer. Lo que una vez fue un simple trabajo, se convirtió en una **profesión**. Hoy, cada remodelación, cada pared y cada acabado es un reflejo de nuestra dedicación y el compromiso inquebrantable de entregar un trabajo impecable. Porque tu hogar o negocio no es solo un espacio, es una extensión de tu vida, y merece la máxima calidad.</p>
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
+    <!-- Nueva sección "Nuestra Promesa" para generar confianza -->
+    <section id="promise" class="py-16 px-4 bg-blue-600 text-white">
+        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-6">Nuestra Promesa para Ti</h2>
+            <p class="text-lg mb-8">Sabemos que cada inversión es importante. Por eso, te garantizamos:</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-semibold mb-2">Calidad sin Compromiso</h3>
+                    <p class="text-sm opacity-80">Usamos los mejores materiales y técnicas para asegurar un resultado duradero y de alta calidad.</p>
+                </div>
+                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-semibold mb-2">Transparencia Total</h3>
+                    <p class="text-sm opacity-80">Te acompañamos en cada paso del proceso. No hay sorpresas, solo resultados claros y honestos.</p>
+                </div>
+                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-2xl font-semibold mb-2">Acabados de Lujo</h3>
+                    <p class="text-sm opacity-80">Nuestra atención al detalle es lo que nos diferencia. Cada acabado es impecable y digno de tu sueño.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios con descripciones más persuasivas y nuevos servicios -->
     <section id="services" class="py-16 px-4 bg-gray-100">
         <div class="container mx-auto max-w-6xl text-center">
-            <h2 class="text-4xl font-bold mb-12 text-blue-600" data-aos="fade-up">Nuestros Servicios</h2>
+            <h2 class="text-4xl font-bold mb-12 text-blue-600" data-aos="fade-up">Diseñando y Creando Espacios Únicos</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Tarjeta de Servicio 1 -->
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-right">
                     <div class="text-5xl text-blue-500 mb-4">🏠</div>
-                    <h3 class="text-2xl font-semibold mb-2">Remodelación Interior</h3>
-                    <p class="text-gray-600">Transformamos tus espacios, creando ambientes modernos y funcionales que se adaptan a tus necesidades y estilo.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Remodelación con Estilo</h3>
+                    <p class="text-gray-600">Transformamos tus espacios en ambientes modernos y llenos de vida, funcionales y hermosos que se adaptan a tu estilo de vida.</p>
                 </div>
                 <!-- Tarjeta de Servicio 2 -->
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-up">
                     <div class="text-5xl text-blue-500 mb-4">🧱</div>
-                    <h3 class="text-2xl font-semibold mb-2">Instalación de Tabiquería</h3>
-                    <p class="text-gray-600">Construcción de tabiques y paredes divisorias con materiales de alta calidad, garantizando durabilidad y un acabado perfecto.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Tabiquería de Alta Calidad</h3>
+                    <p class="text-gray-600">Organiza tu espacio con paredes divisorias sólidas y bien construidas, garantizando durabilidad y un aislamiento perfecto.</p>
                 </div>
                 <!-- Tarjeta de Servicio 3 -->
                 <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-left">
                     <div class="text-5xl text-blue-500 mb-4">🔨</div>
-                    <h3 class="text-2xl font-semibold mb-2">Acabados Profesionales</h3>
-                    <p class="text-gray-600">Detalles que marcan la diferencia. Desde la instalación de puertas hasta la pintura, nos aseguramos de que cada acabado sea impecable.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Acabados que Enamoran</h3>
+                    <p class="text-gray-600">Cada detalle cuenta. Nos aseguramos de que cada acabado, desde la pintura hasta la instalación de puertas, sea impecable y profesional.</p>
+                </div>
+                <!-- NUEVO SERVICIO: Electricidad -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-right" data-aos-delay="200">
+                    <div class="text-5xl text-blue-500 mb-4">⚡</div>
+                    <h3 class="text-2xl font-semibold mb-2">Servicios Eléctricos Certificados</h3>
+                    <p class="text-gray-600">Ofrecemos soluciones eléctricas seguras y eficientes. Estamos inscritos en la **Superintendencia de Electricidad y Combustibles (SEC)**, lo que garantiza un trabajo 100% legal y profesional.</p>
+                </div>
+                <!-- NUEVO SERVICIO: Asesoría Inmobiliaria -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl text-blue-500 mb-4">🔍</div>
+                    <h3 class="text-2xl font-semibold mb-2">Asesoría Inmobiliaria Profesional</h3>
+                    <p class="text-gray-600">Antes de comprar tu nueva casa, te ofrecemos un servicio de inspección pre-entrega. Te proporcionamos un **informe técnico con bases legales** para que tu inversión esté segura. Ideal para clientes y abogados.</p>
+                </div>
+                <!-- NUEVO SERVICIO: Asesoramiento en compras -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-left" data-aos-delay="200">
+                    <div class="text-5xl text-blue-500 mb-4">🛒</div>
+                    <h3 class="text-2xl font-semibold mb-2">Asesoría en Compras de Materiales</h3>
+                    <p class="text-gray-600">No te preocupes por la elección de los materiales. Te asesoramos en cada compra para que obtengas la mejor calidad al mejor precio, asegurando que tu presupuesto rinda al máximo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Portafolio -->
+    <!-- Sección de Portafolio con textos más atractivos -->
     <section id="portfolio" class="py-16 px-4">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Nuestros Trabajos Recientes</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Proyectos de los que Nos Enamoramos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Tarjeta de Antes y Después (Remodelación) -->
+                <!-- Tarjeta 1: Remodelación de Baño -->
                 <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Remodelación Interior</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Transformación Completa de un Baño</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="relative">
-                            <img src="https://i.ibb.co/F4dJnQ0w/casa-mi-antes.jpg" alt="Foto de una casa antes de la remodelación" class="rounded-lg w-full h-48 object-cover">
-                            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">Antes</span>
+                        <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/BHSuBXgER34" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Antes</span>
                         </div>
-                        <div class="relative">
-                            <img src="https://i.ibb.co/nMdwDsMk/casa-mi-lista.jpg" alt="Foto de la misma casa después de la remodelación" class="rounded-lg w-full h-48 object-cover">
-                            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">Después</span>
+                        <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/x1nMSsNUb9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Después</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 2: Remodelación de Fachada de Clínica -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Una Fachada que Genera Confianza</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="relative w-full pb-[75%] rounded-lg overflow-hidden">
+                            <img src="https://i.ibb.co/cXr9tHCS/clinica-fachada-antes.jpg" alt="Fachada de la clínica antes de la remodelación, mostrando su estado anterior." class="absolute top-0 left-0 w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Antes</span>
+                        </div>
+                        <div class="relative w-full pb-[75%] rounded-lg overflow-hidden">
+                            <img src="https://i.ibb.co/ccGdGRcb/clinica-fachada-despues.jpg" alt="Fachada de la clínica después de la remodelación, con un aspecto moderno y profesional." class="absolute top-0 left-0 w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Después</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta de instalación de tabiquería -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Instalación de Tabiquería</h3>
-                    <img src="https://i.ibb.co/wN70JFCm/servicio-de-drywa-5servicio-de-drywa.jpg" alt="Foto de una pared de tabiquería en proceso de instalación" class="rounded-lg w-full h-64 object-cover">
+                <!-- Tarjeta 3: De Bodega a Dormitorio -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="400">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Un Nuevo Espacio Lleno de Vida</h3>
+                    <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden mb-4">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/PuRm8A518Pw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-600 mt-4">Transformamos una bodega de almacenamiento en un dormitorio cálido y funcional, demostrando que no hay límites para la creatividad.</p>
+                </div>
+                
+                <!-- Tarjeta 4: Ampliación de Segundo Piso -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="600">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Un Nuevo Nivel de Comodidad</h3>
+                    <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden mb-4">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/onI5l6S9Z70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-600 mt-4">Ampliamos tu espacio para que tu familia crezca sin límites. Un segundo piso construido con la más alta calidad y un diseño perfecto.</p>
                 </div>
 
-                <!-- Nueva imagen 1 de proyecto -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="400">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Detalles de Acabado</h3>
-                    <img src="https://placehold.co/600x400/81C784/FFFFFF?text=Proyecto+1" alt="Imagen de proyecto terminado" class="rounded-lg w-full h-64 object-cover">
-                </div>
-                
-                <!-- Nueva imagen 2 de proyecto -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="600">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Instalación de Piso</h3>
-                    <img src="https://placehold.co/600x400/64B5F6/FFFFFF?text=Proyecto+2" alt="Imagen de instalación de piso" class="rounded-lg w-full h-64 object-cover">
-                </div>
-                
-                <!-- Nueva imagen 3 de proyecto -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="800">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Remodelación de Cocina</h3>
-                    <img src="https://placehold.co/600x400/FFB74D/FFFFFF?text=Proyecto+3" alt="Imagen de remodelación de cocina" class="rounded-lg w-full h-64 object-cover">
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Testimonios -->
+    <!-- Sección de Testimonios con un diseño más atractivo -->
     <section id="testimonials" class="py-16 px-4 bg-gray-100">
         <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-12 text-blue-600">Lo que dicen nuestros clientes</h2>
-            <div class="bg-white p-8 rounded-2xl shadow-xl">
-                <blockquote class="text-lg italic text-gray-700 leading-relaxed mb-4">
-                    "Contratar a Construyendo Sueños SPA fue la mejor decisión. Su trabajo es impecable, rápido y con una atención al detalle que superó todas mis expectativas. ¡Mi casa ahora es el hogar de mis sueños!"
-                </blockquote>
-                <cite class="font-bold text-gray-600">- Cliente Satisfecho</cite>
+            <h2 class="text-4xl font-bold mb-12 text-blue-600">Historias que Nos Inspiran</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <blockquote class="text-lg italic text-gray-700 leading-relaxed mb-4">
+                        "La calidad de Construyendo Sueños superó todas mis expectativas. Hicieron de mi casa el hogar que siempre soñé. Su dedicación y atención al detalle son inigualables. ¡Totalmente recomendados!"
+                    </blockquote>
+                    <cite class="font-bold text-blue-600">- María S. | Remodelación de Baño</cite>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <blockquote class="text-lg italic text-gray-700 leading-relaxed mb-4">
+                        "La transformación de mi bodega fue mágica. Lo que antes era un espacio sin vida, hoy es un dormitorio acogedor. Son un equipo de profesionales que aman lo que hacen."
+                    </blockquote>
+                    <cite class="font-bold text-blue-600">- Javier P. | Transformación de Bodega</cite>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Sección de Planes de Mantenimiento Anual -->
+    
+    <!-- Sección de Planes de Mantenimiento Anual con un enfoque más rentable -->
     <section id="plans" class="py-16 px-4 bg-gray-200">
         <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6 text-blue-600">Planes de Mantenimiento Anual</h2>
-            <p class="text-lg text-gray-700 mb-8">Asegura la belleza y funcionalidad de tu espacio con nuestros planes de mantenimiento. Un servicio completo para tu tranquilidad.</p>
-            <div class="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">Plan Premium</h3>
-                <ul class="text-left text-gray-600 space-y-2 mb-6">
+            <h2 class="text-4xl font-bold mb-6 text-blue-600">Tu Mejor Inversión: Mantenimiento Anual</h2>
+            <p class="text-lg text-gray-700 mb-8">Un plan diseñado para que tu hogar siempre se vea perfecto y para que tú ahorres dinero a largo plazo. No es un gasto, es la forma más inteligente de proteger tu inversión.</p>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-blue-600">
+                <h3 class="text-3xl font-bold mb-4 text-gray-800">Plan de Mantenimiento Premium</h3>
+                <ul class="text-left text-gray-600 space-y-4 mb-6">
                     <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">✔️</span> Inspección y mantenimiento bianual de paredes y techos.
+                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
+                        <div>
+                            <span class="font-bold">Inspección Integral Bianual:</span> Nuestros expertos revisan cada rincón de tu propiedad para detectar problemas antes de que se conviertan en reparaciones costosas.
+                        </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">✔️</span> Retoques de pintura y sellado de grietas.
+                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
+                        <div>
+                            <span class="font-bold">Reparaciones Prioritarias sin Costo Adicional:</span> Retoques de pintura, sellado de grietas y pequeñas reparaciones cubiertas, ¡sin sorpresas en la factura!
+                        </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">✔️</span> Asistencia prioritaria para reparaciones urgentes.
+                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
+                        <div>
+                            <span class="font-bold">Asesoría de por Vida:</span> Recibe asistencia personalizada y asesoría técnica en cualquier momento del año. Estamos aquí para ti.
+                        </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-500 mr-2">✔️</span> Descuentos exclusivos en proyectos de remodelación.
+                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
+                        <div>
+                            <span class="font-bold">Descuentos Exclusivos:</span> Accede a un 15% de descuento en cualquier proyecto de remodelación mayor que decidas realizar durante tu plan anual.
+                        </div>
                     </li>
                 </ul>
-                <a href="#contact" class="w-full inline-block py-3 px-6 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors">
-                    Solicitar Cotización
+                <a href="#contact" class="w-full inline-block py-4 px-8 bg-blue-600 text-white rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
+                    ¡Protege tu inversión ahora!
                 </a>
             </div>
         </div>
@@ -169,34 +247,30 @@
     <!-- Sección de contacto y formulario -->
     <section id="contact" class="py-16 px-4 bg-gray-200">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Contáctanos</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Tu Próximo Gran Proyecto Comienza Aquí</h2>
             <div class="flex flex-col lg:flex-row items-start justify-between gap-12">
                 
                 <!-- Contenedor de Información de Contacto y QR -->
                 <div class="w-full lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Información de Contacto</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Conversemos</h3>
                     <p class="text-gray-600 mb-6">
-                        Para consultas, cotizaciones o si tienes alguna pregunta, no dudes en contactarnos a través de los siguientes medios.
+                        Para consultas, cotizaciones o si tienes una idea que quieres hacer realidad, contáctanos. Estamos listos para escuchar tu sueño.
                     </p>
                     <div class="space-y-4 text-lg text-gray-700 mb-6">
                         <p>
                             <i class="fa-brands fa-whatsapp text-blue-600 mr-2"></i> 
-                            <!-- Número de WhatsApp actualizado -->
                             <a href="https://wa.me/56948000057" class="hover:underline" target="_blank">WhatsApp: +56 9 4800 0057</a>
                         </p>
                         <p>
                             <i class="fa-solid fa-envelope text-blue-600 mr-2"></i> 
-                            <!-- Correo electrónico actualizado -->
                             <a href="mailto:construccionesdelsurcs@gmail.com" class="hover:underline">Correo Electrónico: construccionesdelsurcs@gmail.com</a>
                         </p>
                         <p>
                             <i class="fa-brands fa-instagram text-blue-600 mr-2"></i> 
-                            <!-- Instagram actualizado -->
                             <a href="https://www.instagram.com/construccionesdelsur.cs?igsh=MTB6cGJrMngzbWRveg==" class="hover:underline" target="_blank">Instagram: @construccionesdelsur.cs</a>
                         </p>
                         <p>
                             <i class="fa-brands fa-facebook text-blue-600 mr-2"></i> 
-                            <!-- Facebook actualizado -->
                             <a href="https://www.facebook.com/share/16ssuFJgJ2/" class="hover:underline" target="_blank">Facebook: /share/16ssuFJgJ2/</a>
                         </p>
                     </div>
@@ -208,18 +282,8 @@
                 <!-- Contenedor del formulario -->
                 <div class="w-full lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl" data-aos="fade-left">
                     <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Envía un Mensaje</h3>
-                    <p class="text-gray-600 text-center mb-8">Para consultas o cotizaciones sin compromiso.</p>
+                    <p class="text-gray-600 text-center mb-8">Cuéntanos tu idea. Nosotros nos encargamos de los detalles.</p>
                     
-                    <!-- 
-                        **¡IMPORTANTE: CONFIGURACIÓN DEL FORMULARIO!**
-                        Este formulario funciona con Formspree, un servicio gratuito para recibir mensajes
-                        directamente en tu correo electrónico.
-
-                        PASO 1: Ve a https://formspree.io y crea una cuenta.
-                        PASO 2: Crea un nuevo formulario y Formspree te dará un URL único.
-                        PASO 3: Reemplaza el URL "https://formspree.io/f/xnnzyked" que ves en la línea
-                                de abajo con el URL que te dio Formspree. ¡Con eso, el formulario funcionará!
-                    -->
                     <form id="contactForm" action="https://formspree.io/f/xnnzyked" method="POST" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
@@ -236,7 +300,6 @@
                             <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-lg"></textarea>
                         </div>
             
-                        <!-- Campo oculto para el asunto del correo -->
                         <input type="hidden" name="_subject" value="Nuevo mensaje de contacto!">
             
                         <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg">
@@ -244,7 +307,6 @@
                         </button>
                     </form>
             
-                    <!-- Mensaje de éxito que se mostrará al enviar el formulario -->
                     <div id="successMessage" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md relative" role="alert">
                         <span class="block sm:inline">¡Gracias! Tu mensaje ha sido enviado.</span>
                     </div>
@@ -260,15 +322,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicializa la librería AOS para animaciones
         AOS.init({
             duration: 1000,
             once: true,
         });
 
-        // Script para manejar el envío del formulario
         document.getElementById('contactForm').addEventListener('submit', async function (event) {
-            event.preventDefault(); // Previene el envío del formulario por defecto
+            event.preventDefault();
             
             const form = event.target;
             const statusMessage = document.getElementById('successMessage');
@@ -283,25 +343,20 @@
                 });
 
                 if (response.ok) {
-                    // El formulario se envió con éxito
-                    form.reset(); // Reinicia el formulario
-                    statusMessage.classList.remove('hidden'); // Muestra el mensaje de éxito
-                    // Opcional: Oculta el mensaje después de unos segundos
+                    form.reset();
+                    statusMessage.classList.remove('hidden');
                     setTimeout(() => {
                         statusMessage.classList.add('hidden');
                     }, 5000);
                 } else {
-                    // Si el servidor responde con un error
                     const data = await response.json();
                     if (data.errors) {
-                        // El servicio de Formspree alertará de un error si el URL es incorrecto
                         alert(data.errors.map(error => error.message).join(', '));
                     } else {
                         alert("¡Hubo un problema al enviar el formulario!");
                     }
                 }
             } catch (error) {
-                // Maneja errores de red
                 alert("¡Error de red! Por favor, revisa tu conexión.");
             }
         });

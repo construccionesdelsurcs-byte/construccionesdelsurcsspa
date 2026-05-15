@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Construcciones del sur - Yohn Sepúlveda, Constructor Civil titulado. Remodelaciones, carpintería, gasfitería, electricidad SEC e inspecciones inmobiliarias en Temuco y Región de La Araucanía.">
-  <meta name="keywords" content="constructor civil Temuco, remodelaciones Temuco, carpintería Temuco, gasfitería Temuco, electricidad SEC Temuco, inspección inmobiliaria Araucanía, construyendo sueños spa">
-  <meta property="og:title" content="Construcciones del sur — Constructor Civil Titulado · Temuco">
+  <meta name="description" content="Construcciones del Sur - Yohn Sepúlveda, Constructor Civil titulado. Remodelaciones, carpintería, gasfitería, electricidad SEC e inspecciones inmobiliarias en Temuco y Región de La Araucanía.">
+  <meta name="keywords" content="constructor civil Temuco, remodelaciones Temuco, carpintería Temuco, gasfitería Temuco, electricidad SEC Temuco, inspección inmobiliaria Araucanía, construcciones del sur">
+  <meta property="og:title" content="Construcciones del Sur — Constructor Civil Titulado · Temuco">
   <meta property="og:description" content="Remodelaciones, carpintería, electricidad SEC y más. Tu proyecto, nuestra pasión. Presupuesto sin costo en 24h.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://construccionesdelsurcs-byte.github.io/construccionesdelsurcsspa/">
-  <title>Construcciones del sur — Constructor Civil · Temuco</title>
+  <title>Construcciones del Sur — Constructor Civil · Temuco</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
@@ -299,7 +299,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo">Construcciones del sur — Constructor Civil · Temuco</span></a>
+  <a href="#" class="nav-logo">Construcciones del Sur<span>Constructor Civil · Temuco</span></a>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
   <div class="nav-links" id="navLinks">
     <a href="#quienes">Nosotros</a>
@@ -375,7 +375,7 @@
         <span class="section-tag">Nuestra Historia</span>
         <h2 class="section-title">La pasión por lo bien hecho</h2>
         <div class="section-line"></div>
-        <p style="color:var(--gray);line-height:1.8;margin-bottom:14px;font-size:.95rem">En <strong>Construyendo Sueños SPA</strong>, liderada por <strong>Yohn Sepúlveda</strong>, no solo construimos — creamos. En cada proyecto ponemos alma, experiencia y un profundo amor por el detalle.</p>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:14px;font-size:.95rem">En <strong>Construcciones del Sur</strong>, liderada por <strong>Yohn Sepúlveda</strong>, no solo construimos — creamos. En cada proyecto ponemos alma, experiencia y un profundo amor por el detalle.</p>
         <p style="color:var(--gray);line-height:1.8;font-size:.95rem">Como <strong>Constructor Civil titulado</strong> y <strong>carpintero de oficio</strong>, combinamos formación académica con experiencia práctica. Tu hogar o negocio es una extensión de tu vida, y merece la máxima calidad.</p>
         <div class="about-feats">
           <div class="about-feat"><span class="about-feat-icon">🏛️</span><div class="about-feat-text"><strong>Constructor Civil Titulado</strong><span>Seguridad estructural y cumplimiento normativo garantizado.</span></div></div>
@@ -536,7 +536,7 @@
     </div>
     <div class="testimonials-wrap">
       <div class="testimonial-card reveal">
-        <p class="testimonial-text">"La calidad de Construyendo Sueños superó todas mis expectativas. Hicieron de mi casa el hogar que siempre soñé. Su dedicación y atención al detalle son inigualables. ¡Totalmente recomendados!"</p>
+        <p class="testimonial-text">"La calidad de Construcciones del Sur superó todas mis expectativas. Hicieron de mi casa el hogar que siempre soñé. Su dedicación y atención al detalle son inigualables. ¡Totalmente recomendados!"</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">MS</div>
           <div><div class="testimonial-stars">★★★★★</div><div class="testimonial-name">María S.</div><div class="testimonial-place">Remodelación Baño · Temuco</div></div>
@@ -561,6 +561,12 @@
 </section>
 
 <!-- BLOG -->
+<!-- MODALES DE ARTÍCULOS -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;backdrop-filter:blur(3px)"></div>
+<div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9001;width:min(720px,95vw);max-height:88vh;overflow-y:auto;background:#fff;padding:0;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+  <div id="modal-content"></div>
+</div>
+
 <section id="blog">
   <div class="container">
     <div class="blog-header">
@@ -571,33 +577,37 @@
       </div>
     </div>
     <div class="blog-grid">
-      <div class="blog-card reveal">
+
+      <div class="blog-card reveal" data-modal="humedad" style="cursor:pointer">
         <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Humedad paredes"></div>
         <div class="blog-card-body">
           <span class="blog-tag">Mantenimiento</span>
           <h3>5 señales de humedad que no debes ignorar en tu hogar</h3>
           <p>La humedad no detectada puede costar 10 veces más. Te explicamos qué buscar antes de que sea tarde.</p>
-          <div class="blog-meta">Yohn Sepúlveda · Mayo 2025</div>
+          <div class="blog-meta">Yohn Sepúlveda · Mayo 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
         </div>
       </div>
-      <div class="blog-card reveal">
+
+      <div class="blog-card reveal" data-modal="precios" style="cursor:pointer">
         <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Remodelación precios"></div>
         <div class="blog-card-body">
           <span class="blog-tag">Remodelación</span>
           <h3>¿Cuánto cuesta remodelar en Temuco? Guía de precios 2025</h3>
           <p>Rangos reales y factores que influyen para que planifiques tu presupuesto sin sorpresas desagradables.</p>
-          <div class="blog-meta">Yohn Sepúlveda · Abril 2025</div>
+          <div class="blog-meta">Yohn Sepúlveda · Abril 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
         </div>
       </div>
-      <div class="blog-card reveal">
+
+      <div class="blog-card reveal" data-modal="inspeccion" style="cursor:pointer">
         <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Inspección inmobiliaria"></div>
         <div class="blog-card-body">
           <span class="blog-tag">Inspección Inmobiliaria</span>
           <h3>Por qué necesitas inspección técnica antes de comprar una casa</h3>
           <p>Lo que los ojos no ven puede costarte millones. Un informe técnico es la mejor inversión antes de firmar.</p>
-          <div class="blog-meta">Yohn Sepúlveda · Marzo 2025</div>
+          <div class="blog-meta">Yohn Sepúlveda · Marzo 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -635,7 +645,7 @@
           <a href="https://wa.me/56948000057" class="contact-social" target="_blank">Wa</a>
         </div>
         <div class="qr-wrap">
-          <img src="https://i.ibb.co/hF0rN2zX/QR-CS-IG.jpg" alt="QR Instagram Construyendo Sueños" onerror="this.style.display='none'">
+          <img src="https://i.ibb.co/hF0rN2zX/QR-CS-IG.jpg" alt="QR Instagram Construcciones del Sur" onerror="this.style.display='none'">
           <p>Escanea y síguenos en Instagram</p>
         </div>
       </div>
@@ -676,7 +686,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="nav-logo" style="color:white">Construcciones del sur<span style="color:var(--gold)">SPA — Constructor Civil · Temuco</span></a>
+      <a href="#" class="nav-logo" style="color:white">Construcciones del Sur<span style="color:var(--gold)">Constructor Civil · Temuco</span></a>
       <p>Soluciones integrales para construcción y mantención de propiedades. Calidad, transparencia y compromiso en cada proyecto. Inscritos SEC.</p>
     </div>
     <div class="footer-col">
@@ -713,7 +723,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 Construcciones del sur · Todos los derechos reservados · Temuco, Chile</p>
+    <p>&copy; 2025 Construcciones del Sur · Todos los derechos reservados · Temuco, Chile</p>
     <p>⚡ <a href="#servicios">Inscritos SEC</a> · 🏛️ Constructor Civil Titulado</p>
   </div>
 </footer>
@@ -727,7 +737,7 @@
       <button class="wa-close" onclick="toggleWa()">✕</button>
     </div>
     <div class="wa-body">
-      <div class="wa-bubble"><strong>¡Hola! 👋</strong>Soy Yohn, Constructor Civil titulado y estudiante de ingieneria en electricidad. Cuéntame tu proyecto y te doy un presupuesto gratis en 24 horas. Sin compromiso.</div>
+      <div class="wa-bubble"><strong>¡Hola! 👋</strong>Soy Yohn, Constructor Civil titulado e inscrito SEC. Cuéntame tu proyecto y te doy un presupuesto gratis en 24 horas. Sin compromiso.</div>
     </div>
     <div class="wa-footer">
       <a href="https://wa.me/56948000057?text=Hola%20Yohn!%20Vengo%20de%20tu%20sitio%20web%20y%20me%20interesa%20un%20presupuesto" class="wa-link" target="_blank">💬 Escribir ahora</a>
@@ -801,6 +811,122 @@
     f.reset();
     setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 6000);
   }
+
+  // MODALES BLOG
+  const articulos = {
+    humedad: {
+      tag: 'Mantenimiento',
+      titulo: '5 señales de humedad que no debes ignorar en tu hogar',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Mayo 2025',
+      img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+      contenido: `
+        <p>La humedad es el enemigo silencioso de tu hogar. Si no la detectas a tiempo, puede convertirse en un problema estructural que cueste 10 o incluso 20 veces más reparar. Como Constructor Civil, he visto cómo problemas pequeños se transforman en pesadillas por no actuar a tiempo.</p>
+        <h3>🔴 1. Manchas oscuras en techos o paredes</h3>
+        <p>Las manchas amarillas, marrones o grises en paredes y techos son la señal más visible. Generalmente indican una filtración activa desde el exterior, una cañería con goteo oculto o falta de impermeabilización en la losa. <strong>No las pintes encima</strong> — eso solo esconde el problema temporalmente.</p>
+        <h3>🔴 2. Olor a humedad persistente</h3>
+        <p>Si tu casa huele a "cerrado" aunque abras las ventanas, hay humedad acumulada en algún punto. Puede estar dentro de los muros, bajo el piso o en el cielo. El olor proviene de hongos y bacterias que ya están creciendo.</p>
+        <h3>🔴 3. Pintura que se hincha, descascara o ampolla</h3>
+        <p>La pintura descascarada no es solo estética. Es señal de que el agua está empujando desde adentro del muro. Esto es urgente: el muro ya está saturado de humedad.</p>
+        <h3>🔴 4. Piso que cruje, se levanta o deforma</h3>
+        <p>Si tienes pisos de madera o laminado que crujen más de lo normal, se ondula o tiene partes levantadas, hay humedad viniendo desde abajo. En Temuco y la región, la humedad del suelo es muy frecuente en sectores sin membrana aislante bajo el radier.</p>
+        <h3>🔴 5. Condensación frecuente en ventanas y rincones</h3>
+        <p>Si cada mañana tus ventanas amanecen empañadas por dentro y los rincones de los dormitorios tienen pelusa negra, tienes un problema de aislación térmica e higroscopia. Es tratable, pero necesita intervención profesional.</p>
+        <h3>✅ ¿Qué hacer?</h3>
+        <p>Lo primero es identificar el origen: ¿viene de afuera (lluvia, filtraciones) o de adentro (condensación, cañerías)? Una vez identificado, la solución puede ser desde impermeabilizar la fachada hasta cambiar cañerías o mejorar la ventilación.</p>
+        <p><strong>No esperes.</strong> Un diagnóstico temprano puede ahorrarte cientos de miles de pesos.</p>
+      `
+    },
+    precios: {
+      tag: 'Remodelación',
+      titulo: '¿Cuánto cuesta remodelar en Temuco? Guía de precios 2025',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Abril 2025',
+      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+      contenido: `
+        <p>Una de las preguntas más frecuentes que recibo es: <em>"¿Cuánto me va a costar remodelar?"</em> La respuesta honesta es: depende. Pero aquí te entrego rangos reales basados en proyectos que hemos ejecutado en Temuco y la Región de La Araucanía durante 2024-2025.</p>
+        <h3>🏠 Remodelación de Baño Completo</h3>
+        <p><strong>Rango: $1.800.000 – $4.500.000</strong><br>Incluye: cambio de revestimientos (piso y muro), cambio de artefactos sanitarios, gasfitería, instalación eléctrica de luminarias y ventilación, y terminaciones. El precio varía según el tamaño del baño y la calidad de los materiales elegidos.</p>
+        <h3>🍳 Remodelación de Cocina</h3>
+        <p><strong>Rango: $2.500.000 – $7.000.000</strong><br>Incluye: muebles de cocina a medida, mesón, revestimientos, gasfitería, electricidad y pintura. Una cocina bien remodelada puede aumentar el valor de tu propiedad hasta en un 15%.</p>
+        <h3>📐 Ampliación o Segundo Piso</h3>
+        <p><strong>Rango: $350.000 – $650.000 por m²</strong><br>Esto incluye estructura, techado, tabiques, instalaciones básicas y terminaciones estándar. Los permisos municipales se gestionan aparte.</p>
+        <h3>🎨 Pintura Interior Completa (casa de 80m²)</h3>
+        <p><strong>Rango: $400.000 – $900.000</strong><br>Incluye preparación de superficies, sellado de grietas, aplicación de 2 manos. El precio varía según el estado actual de la superficie.</p>
+        <h3>💡 Factores que encarecen un proyecto</h3>
+        <ul style="color:#6b7280;line-height:2;padding-left:20px">
+          <li>Obras estructurales (cambio de vigas, demoliciones)</li>
+          <li>Materiales de importación o premium</li>
+          <li>Dificultad de acceso al lugar de trabajo</li>
+          <li>Plazos muy ajustados</li>
+          <li>Descubrimientos ocultos (cañerías dañadas, problemas eléctricos)</li>
+        </ul>
+        <h3>✅ Consejo profesional</h3>
+        <p>Siempre pide un presupuesto detallado por ítem. Desconfía de presupuestos globales sin desglose — es ahí donde aparecen los cobros extras. En Construcciones del Sur, entregamos presupuestos transparentes sin letra chica.</p>
+      `
+    },
+    inspeccion: {
+      tag: 'Inspección Inmobiliaria',
+      titulo: 'Por qué necesitas una inspección técnica antes de comprar una casa',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Marzo 2025',
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      contenido: `
+        <p>Comprar una casa es probablemente la decisión financiera más importante de tu vida. Y la mayoría de las personas la toma mirando solo lo que se ve: pintura, terminaciones, cuántos dormitorios tiene. Como Constructor Civil, te digo que lo que <strong>no ves</strong> es lo que puede costarte una fortuna.</p>
+        <h3>🔍 ¿Qué es una inspección técnica pre-entrega?</h3>
+        <p>Es una revisión profesional y exhaustiva de la propiedad antes de que firmes la escritura. Un Constructor Civil evaluará las condiciones estructurales, eléctricas, de gasfitería, impermeabilización, y terminaciones para entregarte un <strong>informe técnico con respaldo legal</strong>.</p>
+        <h3>❌ ¿Qué se detecta en una inspección?</h3>
+        <ul style="color:#6b7280;line-height:2.2;padding-left:20px">
+          <li>Fisuras o grietas estructurales que pueden indicar asentamiento del terreno</li>
+          <li>Humedades activas u ocultas en muros, techos o bajo el piso</li>
+          <li>Instalaciones eléctricas sin certificación o fuera de norma</li>
+          <li>Cañerías con corrosión, pérdidas o materiales obsoletos</li>
+          <li>Problemas de impermeabilización en cubierta y fundaciones</li>
+          <li>Terminaciones deficientes que ocultan daños mayores</li>
+          <li>Obras sin permiso que pueden generar problemas legales</li>
+        </ul>
+        <h3>💰 ¿Cuánto cuesta y cuánto ahorra?</h3>
+        <p>Una inspección técnica profesional cuesta entre <strong>$80.000 y $200.000</strong> según el tamaño de la propiedad. Pero puede ahorrarte desde $500.000 hasta $10.000.000 en reparaciones que descubres <em>después</em> de comprar. La relación costo-beneficio es inigualable.</p>
+        <h3>⚖️ Valor legal del informe</h3>
+        <p>El informe técnico que emitimos tiene respaldo profesional y puede ser utilizado por tu abogado para negociar el precio de compra, solicitar reparaciones al vendedor antes de firmar, o incluso para rescindir el contrato si los problemas son graves.</p>
+        <h3>✅ ¿Cuándo agendar la inspección?</h3>
+        <p><strong>Antes de firmar cualquier documento.</strong> Idealmente después de la oferta y antes de la escritura. Así tienes tiempo de negociar o retirarte si el resultado no es favorable.</p>
+        <p>En Construcciones del Sur realizamos inspecciones en Temuco, Padre Las Casas, Villarrica, Pucón y toda la Región de La Araucanía. Contáctanos para agendar.</p>
+      `
+    }
+  };
+
+  function openModal(id) {
+    const art = articulos[id];
+    const html = `
+      <div style="position:relative">
+        <img src="${art.img}" style="width:100%;height:240px;object-fit:cover;display:block">
+        <button onclick="closeModal()" style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,.5);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+        <span style="position:absolute;bottom:14px;left:20px;background:#c8a96e;color:white;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px">${art.tag}</span>
+      </div>
+      <div style="padding:32px 36px 36px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.55rem;color:#1a2332;line-height:1.25;margin-bottom:10px">${art.titulo}</h2>
+        <p style="color:#c8a96e;font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:28px;border-bottom:1px solid #f0ede7;padding-bottom:14px">✍️ ${art.autor}</p>
+        <div style="color:#6b7280;line-height:1.85;font-size:.95rem">${art.contenido}</div>
+        <div style="margin-top:32px;padding:20px;background:#f5f0e8;border-left:3px solid #c8a96e">
+          <p style="color:#1a2332;font-weight:600;margin-bottom:10px">¿Necesitas ayuda profesional?</p>
+          <a href="https://wa.me/56948000057?text=Hola%20Yohn!%20Le%C3%AD%20tu%20art%C3%ADculo%20y%20tengo%20una%20consulta" target="_blank" style="background:#25D366;color:white;padding:11px 24px;text-decoration:none;font-weight:700;font-size:.85rem;display:inline-block;border-radius:4px">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>`;
+    document.getElementById('modal-content').innerHTML = html;
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.getElementById('modal-box').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('modal-box').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  document.querySelectorAll('.blog-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      var id = this.getAttribute('data-modal');
+      if(id) openModal(id);
+    });
+  });
 
   // NAVBAR ACTIVE ON SCROLL
   window.addEventListener('scroll', () => {

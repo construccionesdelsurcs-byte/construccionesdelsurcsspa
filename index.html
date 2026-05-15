@@ -1,382 +1,939 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construyendo Sueños SPA</title>
-    <!-- Carga Tailwind CSS desde CDN para un diseño moderno -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carga la librería Animate On Scroll (AOS) para animaciones -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Carga de íconos de Font Awesome para redes sociales -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Define la fuente Inter para toda la página */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Estilo personalizado para un degradado de fondo en la sección Hero */
-        .hero-bg {
-            background: linear-gradient(135deg, #1d4ed8, #2563eb);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Construcciones del Sur - Yohn Sepúlveda, Constructor Civil titulado. Remodelaciones, carpintería, gasfitería, electricidad SEC e inspecciones inmobiliarias en Temuco y Región de La Araucanía.">
+  <meta name="keywords" content="constructor civil Temuco, remodelaciones Temuco, carpintería Temuco, gasfitería Temuco, electricidad SEC Temuco, inspección inmobiliaria Araucanía, construcciones del sur">
+  <meta property="og:title" content="Construcciones del Sur — Constructor Civil Titulado · Temuco">
+  <meta property="og:description" content="Remodelaciones, carpintería, electricidad SEC y más. Tu proyecto, nuestra pasión. Presupuesto sin costo en 24h.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://construccionesdelsurcs-byte.github.io/construccionesdelsurcsspa/">
+  <title>Construcciones del Sur — Constructor Civil · Temuco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c8a96e;
+      --gold-dark: #a8883e;
+      --navy: #1a2332;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --gray-light: #f8f8f6;
+      --gray: #6b7280;
+      --text: #1f2937;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--gray-light);overflow-x:hidden}
+
+    /* TOPBAR */
+    .topbar{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;padding:8px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+    .topbar a{color:var(--gold);text-decoration:none}
+    .topbar-right{display:flex;align-items:center;gap:16px}
+    .topbar-right a{color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+    .topbar-right a:hover{color:var(--gold)}
+    .sec-badge{background:var(--gold);color:var(--navy);font-size:.68rem;font-weight:700;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase;border-radius:2px}
+
+    /* NAVBAR */
+    .navbar{background:var(--white);padding:0 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,.08);height:70px}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--navy);text-decoration:none;line-height:1.1}
+    .nav-logo span{color:var(--gold);display:block;font-size:.6rem;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center}
+    .nav-links a{color:var(--navy);text-decoration:none;font-size:.85rem;font-weight:500;padding:0 14px;height:70px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:all .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}
+    .dropdown{position:relative}
+    .dropdown-menu{display:none;position:absolute;top:70px;left:0;background:var(--white);min-width:220px;box-shadow:var(--shadow-lg);border-top:2px solid var(--gold);z-index:100}
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu a{height:auto!important;padding:12px 20px!important;border-bottom:1px solid #f0ede7;display:block!important;font-size:.84rem!important}
+    .nav-cta{background:var(--gold)!important;color:var(--white)!important;padding:10px 18px!important;height:auto!important;border:none!important;font-weight:600!important;font-size:.79rem!important;letter-spacing:.05em!important;text-transform:uppercase!important;margin-left:6px!important;border-radius:2px!important;border-bottom:none!important}
+    .nav-cta:hover{background:var(--gold-dark)!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .hamburger span{width:24px;height:2px;background:var(--navy);display:block;transition:all .3s}
+
+    /* HERO */
+    .hero{position:relative;height:92vh;min-height:580px;overflow:hidden;background:var(--navy)}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
+    .slide.active{opacity:1}
+    .slide::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,35,50,.78) 0%,rgba(26,35,50,.38) 55%,rgba(26,35,50,.55) 100%)}
+    .slide-1{background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')}
+    .slide-2{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')}
+    .slide-3{background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80')}
+    .slide-4{background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80')}
+    .hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 80px;max-width:820px}
+    .hero-tag{display:inline-block;background:var(--gold);color:var(--white);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;margin-bottom:20px;opacity:0;animation:fadeUp .8s .3s forwards}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:18px;opacity:0;animation:fadeUp .8s .5s forwards}
+    .hero h1 em{color:var(--gold);font-style:normal}
+    .hero p{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:32px;font-weight:300;line-height:1.7;opacity:0;animation:fadeUp .8s .7s forwards;max-width:500px}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .9s forwards}
+    .hero-certs{position:absolute;bottom:32px;left:80px;z-index:3;display:flex;gap:10px;flex-wrap:wrap}
+    .hero-cert{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);font-size:.72rem;padding:6px 14px;letter-spacing:.05em;backdrop-filter:blur(4px)}
+    .slider-controls{position:absolute;bottom:36px;right:60px;z-index:3;display:flex;gap:8px;align-items:center}
+    .slider-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s}
+    .slider-dot.active{background:var(--gold);width:26px;border-radius:4px}
+    .slider-arrows{position:absolute;top:50%;right:28px;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:8px}
+    .slider-arrow{width:42px;height:42px;border:1px solid rgba(255,255,255,.35);background:transparent;color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
+    .slider-arrow:hover{background:var(--gold);border-color:var(--gold)}
+
+    /* BUTTONS */
+    .btn-primary{background:var(--gold);color:var(--white);padding:14px 30px;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:all .3s;border-radius:2px;display:inline-block}
+    .btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--white);padding:14px 30px;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;border:2px solid rgba(255,255,255,.45);transition:all .3s;border-radius:2px;display:inline-block}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .btn-gold-outline{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:12px 26px;text-decoration:none;font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}
+    .btn-gold-outline:hover{background:var(--gold);color:var(--white)}
+    .btn-white{display:inline-block;background:var(--white);color:var(--gold-dark);padding:14px 30px;text-decoration:none;font-weight:700;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}
+    .btn-white:hover{background:var(--navy);color:var(--white)}
+
+    /* STATS */
+    .stats-bar{background:var(--navy);padding:36px 60px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+    .stat-item{text-align:center}
+    .stat-number{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--gold);display:block;line-height:1}
+    .stat-label{font-size:.74rem;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;display:block}
+
+    /* SECTIONS */
+    section{padding:88px 60px}
+    .container{max-width:1100px;margin:0 auto}
+    .section-tag{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.5rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:14px}
+    .section-title.light{color:var(--white)}
+    .section-line{width:44px;height:3px;background:var(--gold);margin-bottom:22px}
+    .section-subtitle{font-size:.98rem;color:var(--gray);line-height:1.7;max-width:560px}
+
+    /* QUIÉNES SOMOS */
+    #quienes{background:var(--white)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .about-img-wrap{position:relative}
+    .about-img-wrap img{width:100%;height:480px;object-fit:cover;display:block}
+    .about-badge{position:absolute;bottom:-22px;right:-22px;background:var(--gold);color:var(--white);padding:22px 24px;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;text-align:center;line-height:1}
+    .about-badge small{display:block;font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin-top:4px;font-weight:400}
+    .about-feats{display:flex;flex-direction:column;gap:14px;margin:26px 0}
+    .about-feat{display:flex;align-items:flex-start;gap:14px}
+    .about-feat-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+    .about-feat-text strong{display:block;color:var(--navy);font-size:.9rem;margin-bottom:2px}
+    .about-feat-text span{color:var(--gray);font-size:.83rem}
+    .sec-pill{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--gold);color:var(--gold-dark);font-size:.74rem;font-weight:600;padding:7px 14px;letter-spacing:.04em;margin-top:20px}
+
+    /* SERVICIOS */
+    #servicios{background:var(--gray-light)}
+    .services-header{text-align:center;margin-bottom:52px}
+    .services-header .section-line{margin:0 auto 20px}
+    .services-header .section-subtitle{margin:0 auto}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px}
+    .service-card{background:var(--white);padding:36px 28px;transition:all .3s;border-bottom:3px solid transparent}
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-bottom-color:var(--gold)}
+    .service-icon{font-size:2.2rem;margin-bottom:16px;display:block}
+    .service-card h3{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--navy);margin-bottom:10px}
+    .service-card p{color:var(--gray);font-size:.87rem;line-height:1.7}
+    .service-badge{display:inline-block;background:var(--cream);color:var(--gold-dark);font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;margin-top:10px;border:1px solid var(--gold)}
+    .service-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:.79rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;margin-top:14px}
+    .service-link:hover{gap:10px}
+
+    /* PLAN ANUAL */
+    #plan{background:var(--navy)}
+    .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .plan-items{display:flex;flex-direction:column;gap:14px;margin:26px 0}
+    .plan-item{display:flex;align-items:flex-start;gap:14px;padding:18px 22px;background:rgba(255,255,255,.06);border-left:3px solid var(--gold)}
+    .plan-item-icon{font-size:1.3rem;flex-shrink:0}
+    .plan-item-text strong{display:block;color:var(--white);font-size:.9rem;margin-bottom:3px}
+    .plan-item-text span{color:rgba(255,255,255,.55);font-size:.83rem}
+    .plan-card{background:var(--gold);padding:44px 36px;text-align:center}
+    .plan-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:6px}
+    .plan-discount{font-size:3.8rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--white);line-height:1;margin:16px 0 4px}
+    .plan-discount sup{font-size:1.4rem;font-family:'DM Sans',sans-serif;font-weight:600}
+    .plan-card p{color:rgba(255,255,255,.88);font-size:.88rem;margin-bottom:26px}
+
+    /* PROYECTOS */
+    #proyectos{background:var(--white)}
+    .projects-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:18px}
+    .ba-section{margin-bottom:52px}
+    .ba-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--cream)}
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .ba-item{position:relative;overflow:hidden}
+    .ba-item img{width:100%;height:240px;object-fit:cover;display:block}
+    .ba-label{position:absolute;top:12px;left:12px;background:var(--navy);color:var(--white);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px}
+    .ba-label.after{background:var(--gold)}
+    .video-section{margin-bottom:10px}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+    .video-card{background:var(--navy);overflow:hidden}
+    .video-card iframe{width:100%;height:215px;border:none;display:block}
+    .video-caption{background:var(--navy);padding:14px 16px}
+    .video-caption span{color:var(--gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+    .video-caption h4{color:var(--white);font-size:.88rem;font-weight:400;margin-top:4px;line-height:1.4}
+
+    /* TESTIMONIOS */
+    #testimonios{background:var(--cream)}
+    .testimonials-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .testimonial-card{background:var(--white);padding:32px 28px;position:relative;box-shadow:var(--shadow)}
+    .testimonial-card::before{content:'"';font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold);opacity:.22;position:absolute;top:6px;left:16px;line-height:1}
+    .testimonial-text{font-size:.92rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:20px;position:relative;z-index:1}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem;flex-shrink:0}
+    .testimonial-name{font-weight:600;color:var(--navy);font-size:.88rem}
+    .testimonial-place{color:var(--gray);font-size:.75rem}
+    .testimonial-stars{color:var(--gold);font-size:.8rem;margin-bottom:2px}
+
+    /* BLOG */
+    #blog{background:var(--gray-light)}
+    .blog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:18px}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .blog-card{background:var(--white);overflow:hidden;transition:all .3s}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .blog-card-img{height:190px;overflow:hidden}
+    .blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .blog-card:hover .blog-card-img img{transform:scale(1.06)}
+    .blog-card-body{padding:24px 22px}
+    .blog-tag{display:inline-block;background:var(--cream);color:var(--gold-dark);font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:10px}
+    .blog-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:8px;line-height:1.35}
+    .blog-card p{color:var(--gray);font-size:.83rem;line-height:1.7;margin-bottom:12px}
+    .blog-meta{font-size:.75rem;color:var(--gray)}
+
+    /* CONTACTO */
+    #contacto{background:var(--navy)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+    .contact-details{display:flex;flex-direction:column;gap:16px;margin-top:30px}
+    .contact-detail{display:flex;align-items:flex-start;gap:14px}
+    .contact-detail-icon{width:42px;height:42px;background:rgba(200,169,110,.1);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .contact-detail-text strong{display:block;color:var(--white);font-size:.86rem;margin-bottom:2px}
+    .contact-detail-text a,.contact-detail-text span{color:rgba(255,255,255,.6);font-size:.88rem;text-decoration:none}
+    .contact-detail-text a:hover{color:var(--gold)}
+    .contact-socials{display:flex;gap:10px;margin-top:26px;align-items:center}
+    .contact-social{width:40px;height:40px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;font-size:.78rem;font-weight:700;transition:all .3s}
+    .contact-social:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
+    .qr-wrap{margin-top:22px}
+    .qr-wrap img{width:88px;height:88px;object-fit:cover;border:3px solid var(--gold)}
+    .qr-wrap p{color:rgba(255,255,255,.45);font-size:.7rem;margin-top:6px;letter-spacing:.08em;text-transform:uppercase}
+    .contact-form-wrap{background:var(--white);padding:40px 36px}
+    .contact-form-wrap h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:24px}
+    .form-group{margin-bottom:15px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .form-group label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);margin-bottom:6px}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 14px;border:1px solid #e5e1d8;background:var(--gray-light);font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--text);transition:border-color .2s;outline:none}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-submit{width:100%;background:var(--gold);color:var(--white);border:none;padding:14px;font-family:'DM Sans',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .3s;margin-top:6px}
+    .form-submit:hover{background:var(--gold-dark)}
+    .form-success{display:none;background:#d1fae5;color:#065f46;padding:12px;font-size:.87rem;text-align:center;margin-top:10px}
+
+    /* FOOTER */
+    footer{background:#111a26;padding:56px 60px 28px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+    .footer-brand p{color:rgba(255,255,255,.46);font-size:.86rem;line-height:1.7;margin-top:12px}
+    .footer-col h4{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .footer-col ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.86rem;transition:color .2s}
+    .footer-col ul a:hover{color:var(--gold)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{color:rgba(255,255,255,.3);font-size:.78rem}
+    .footer-bottom a{color:var(--gold);text-decoration:none}
+
+    /* WHATSAPP */
+    .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999}
+    .whatsapp-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;transition:transform .3s;text-decoration:none;position:relative}
+    .whatsapp-btn:hover{transform:scale(1.1)}
+    .whatsapp-btn svg{width:28px;height:28px;fill:white}
+    .wa-pulse{position:absolute;top:0;right:0;width:13px;height:13px;background:#ff4444;border-radius:50%;border:2px solid white;animation:pulse 1.5s infinite}
+    .whatsapp-popup{position:absolute;bottom:70px;right:0;width:292px;background:var(--white);border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.2);overflow:hidden;display:none}
+    .whatsapp-popup.open{display:block;animation:popUp .3s ease}
+    @keyframes popUp{from{opacity:0;transform:translateY(10px) scale(.95)}to{opacity:1;transform:none}}
+    .wa-header{background:#075E54;padding:16px 18px;display:flex;align-items:center;gap:10px;position:relative}
+    .wa-avatar{width:44px;height:44px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .wa-name{color:white;font-weight:600;font-size:.9rem}
+    .wa-status{color:rgba(255,255,255,.7);font-size:.73rem}
+    .wa-close{position:absolute;top:10px;right:12px;background:none;border:none;color:rgba(255,255,255,.7);font-size:1rem;cursor:pointer}
+    .wa-body{padding:18px;background:#e5ddd5}
+    .wa-bubble{background:white;border-radius:8px 8px 8px 2px;padding:11px 13px;font-size:.85rem;color:var(--text);line-height:1.5;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .wa-bubble strong{display:block;margin-bottom:3px;color:var(--navy)}
+    .wa-footer{padding:14px 18px}
+    .wa-link{display:block;background:#25D366;color:white;text-align:center;padding:11px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.86rem;transition:background .2s}
+    .wa-link:hover{background:#128C7E}
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+    .reveal{opacity:0;transform:translateY(26px);transition:all .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* MOBILE */
+    @media(max-width:900px){
+      .hamburger{display:flex}
+      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--white);flex-direction:column;padding:14px 0;box-shadow:var(--shadow-lg)}
+      .nav-links.open{display:flex}
+      .nav-links a{height:auto;padding:12px 26px;border-bottom:1px solid #f0ede7;border-left:none}
+      .nav-cta{margin:10px 26px!important;display:block;text-align:center}
+      .dropdown-menu{position:static!important;box-shadow:none!important;border:none!important;background:#f8f7f4!important}
+      .topbar{padding:6px 18px;font-size:.72rem}
+      .hero-content{padding:0 26px}
+      .hero-certs{left:26px;bottom:80px}
+      .slider-arrows{display:none}
+      section{padding:60px 22px}
+      .about-grid,.plan-grid,.contact-grid{grid-template-columns:1fr}
+      .about-badge{bottom:-10px;right:-8px}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:26px}
+      .stats-bar{padding:26px 22px;gap:26px}
+      .form-row{grid-template-columns:1fr}
+      .navbar{padding:0 18px;position:relative}
+      .ba-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:500px){
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:2rem}
+      .whatsapp-popup{width:260px}
+      .hero-certs{display:none}
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Barra de navegación -->
-    <nav class="sticky top-0 z-50 bg-white shadow-lg py-4 px-6">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">Construyendo Sueños SPA</a>
-            <div class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Nosotros</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Servicios</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition-colors hidden md:inline">Portafolio</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">Contacto</a>
-            </div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📍 Temuco, Región de La Araucanía &nbsp;·&nbsp; <a href="tel:+56948000057">+56 9 4800 0057</a> &nbsp;·&nbsp; <a href="mailto:construccionesdelsurcs@gmail.com">construccionesdelsurcs@gmail.com</a></span>
+  <div class="topbar-right">
+    <span class="sec-badge">⚡ Inscrito SEC</span>
+    <a href="https://www.facebook.com/share/16ssuFJgJ2/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/construccionesdelsur.cs" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo">Construcciones del Sur<span>Constructor Civil · Temuco</span></a>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <div class="nav-links" id="navLinks">
+    <a href="#quienes">Nosotros</a>
+    <div class="dropdown">
+      <a href="#servicios">Servicios ▾</a>
+      <div class="dropdown-menu">
+        <a href="#servicios">🏠 Construcción y Remodelación</a>
+        <a href="#servicios">🧱 Tabiquería</a>
+        <a href="#servicios">🔨 Carpintería y Terminaciones</a>
+        <a href="#servicios">🚰 Gasfitería PPR</a>
+        <a href="#servicios">⚡ Electricidad SEC</a>
+        <a href="#servicios">🔍 Inspección Inmobiliaria</a>
+        <a href="#servicios">🛒 Asesoría en Materiales</a>
+      </div>
+    </div>
+    <a href="#plan">Plan Anual</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#blog">Consejos</a>
+    <a href="#contacto" class="nav-cta">Pedir Presupuesto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="slide slide-1 active"></div>
+  <div class="slide slide-2"></div>
+  <div class="slide slide-3"></div>
+  <div class="slide slide-4"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Constructor Civil Titulado · SEC Certificado · Temuco</span>
+    <h1>Transformamos espacios.<br><em>Construimos</em> sueños.</h1>
+    <p>Tu hogar o negocio merece lo mejor. Yohn Sepúlveda y su equipo entregan calidad, transparencia y acabados que enamoran en cada proyecto.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratis</a>
+      <a href="#proyectos" class="btn-outline">Ver Proyectos Reales</a>
+    </div>
+  </div>
+  <div class="hero-certs">
+    <span class="hero-cert">✅ Constructor Civil Titulado</span>
+    <span class="hero-cert">⚡ Inscrito SEC</span>
+    <span class="hero-cert">🏆 +180 Proyectos</span>
+  </div>
+  <div class="slider-arrows">
+    <button class="slider-arrow" onclick="changeSlide(-1)">▲</button>
+    <button class="slider-arrow" onclick="changeSlide(1)">▼</button>
+  </div>
+  <div class="slider-controls">
+    <div class="slider-dot active" onclick="goToSlide(0)"></div>
+    <div class="slider-dot" onclick="goToSlide(1)"></div>
+    <div class="slider-dot" onclick="goToSlide(2)"></div>
+    <div class="slider-dot" onclick="goToSlide(3)"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><span class="stat-number" data-count="12">0</span><span class="stat-label">Años de Experiencia</span></div>
+  <div class="stat-item reveal"><span class="stat-number" data-count="180">0</span><span class="stat-label">Proyectos Terminados</span></div>
+  <div class="stat-item reveal"><span class="stat-number" data-count="100">0</span><span class="stat-label">% Clientes Satisfechos</span></div>
+  <div class="stat-item reveal"><span class="stat-number" data-count="7">0</span><span class="stat-label">Servicios Especializados</span></div>
+</div>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Yohn Sepúlveda Constructor Civil Temuco">
+        <div class="about-badge">+12<small>años construyendo</small></div>
+      </div>
+      <div class="about-text reveal">
+        <span class="section-tag">Nuestra Historia</span>
+        <h2 class="section-title">La pasión por lo bien hecho</h2>
+        <div class="section-line"></div>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:14px;font-size:.95rem">En <strong>Construcciones del Sur</strong>, liderada por <strong>Yohn Sepúlveda</strong>, no solo construimos — creamos. En cada proyecto ponemos alma, experiencia y un profundo amor por el detalle.</p>
+        <p style="color:var(--gray);line-height:1.8;font-size:.95rem">Como <strong>Constructor Civil titulado</strong> y <strong>carpintero de oficio</strong>, combinamos formación académica con experiencia práctica. Tu hogar o negocio es una extensión de tu vida, y merece la máxima calidad.</p>
+        <div class="about-feats">
+          <div class="about-feat"><span class="about-feat-icon">🏛️</span><div class="about-feat-text"><strong>Constructor Civil Titulado</strong><span>Seguridad estructural y cumplimiento normativo garantizado.</span></div></div>
+          <div class="about-feat"><span class="about-feat-icon">⚡</span><div class="about-feat-text"><strong>Inscrito en la SEC</strong><span>Trabajos eléctricos 100% legales y certificados oficialmente.</span></div></div>
+          <div class="about-feat"><span class="about-feat-icon">🤝</span><div class="about-feat-text"><strong>Transparencia Total</strong><span>Presupuestos detallados sin costos ocultos, nunca.</span></div></div>
+          <div class="about-feat"><span class="about-feat-icon">✨</span><div class="about-feat-text"><strong>Acabados que Enamoran</strong><span>Atención al detalle que marca la diferencia en cada terminación.</span></div></div>
         </div>
-    </nav>
+        <span class="sec-pill">⚡ Inscrito Superintendencia de Electricidad y Combustibles (SEC)</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección principal (Hero) con un diseño más profesional -->
-    <header class="hero-bg text-white py-20 px-4 rounded-b-3xl relative overflow-hidden">
-        <div class="container mx-auto text-center" data-aos="fade-up">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">¡Construimos tus Sueños!</h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8 drop-shadow-md">Tu espacio, nuestra pasión. Transforma tu hogar o negocio en la obra de tus sueños con profesionalismo, dedicación y un acabado impecable.</p>
-            <a href="#contact" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 shadow-xl">
-                ¡Hagámoslo realidad!
-            </a>
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-tag">Lo que hacemos</span>
+      <h2 class="section-title">7 servicios para cuidar tu propiedad</h2>
+      <div class="section-line" style="margin:0 auto 16px"></div>
+      <p class="section-subtitle">Desde una reparación urgente hasta una obra completa. Un equipo, todas las soluciones.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-icon">🏠</span>
+        <h3>Construcción y Remodelación</h3>
+        <p>Transformamos tus espacios en ambientes modernos y funcionales. Ampliaciones, modificaciones estructurales y remodelaciones completas.</p>
+        <a href="#contacto" class="service-link">Cotizar gratis →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🧱</span>
+        <h3>Tabiquería de Alta Calidad</h3>
+        <p>Paredes divisorias sólidas con durabilidad y aislamiento perfecto para organizar tus espacios de forma elegante.</p>
+        <a href="#contacto" class="service-link">Cotizar gratis →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🔨</span>
+        <h3>Carpintería y Terminaciones</h3>
+        <p>Muebles a medida, puertas, clósets y revestimientos. Cada acabado impecable, desde la pintura hasta la instalación final.</p>
+        <a href="#contacto" class="service-link">Cotizar gratis →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🚰</span>
+        <h3>Gasfitería e Instalaciones PPR</h3>
+        <p>Reparación de filtraciones, cambio de cañerías e instalaciones de agua potable con materiales PPR de larga duración.</p>
+        <a href="#contacto" class="service-link">Cotizar gratis →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">⚡</span>
+        <h3>Electricidad Certificada SEC</h3>
+        <p>Soluciones eléctricas seguras y eficientes. Inscritos en la SEC — trabajo 100% legal, certificado y con respaldo oficial.</p>
+        <span class="service-badge">⚡ Certificado SEC</span>
+        <a href="#contacto" class="service-link" style="display:block">Cotizar gratis →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🔍</span>
+        <h3>Inspección Inmobiliaria Pre-Entrega</h3>
+        <p>Antes de comprar tu nueva casa, recibe un informe técnico con bases legales. Ideal para compradores, abogados e inmobiliarias.</p>
+        <a href="#contacto" class="service-link">Agendar inspección →</a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🛒</span>
+        <h3>Asesoría en Compra de Materiales</h3>
+        <p>Te acompañamos en cada compra para obtener la mejor calidad al mejor precio. Tu presupuesto rinde al máximo.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN ANUAL -->
+<section id="plan">
+  <div class="container">
+    <div class="plan-grid">
+      <div class="reveal">
+        <span class="section-tag" style="color:var(--gold)">Exclusivo · Solo en Temuco</span>
+        <h2 class="section-title light">Plan Anual de Mantenimiento Premium</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle" style="color:rgba(255,255,255,.65)">No es un gasto — es la forma más inteligente de proteger tu inversión. Un plan que no existe en ningún otro lado.</p>
+        <div class="plan-items">
+          <div class="plan-item"><span class="plan-item-icon">📅</span><div class="plan-item-text"><strong>Inspección Integral Bianual</strong><span>Revisamos cada rincón para detectar problemas antes de que crezcan y cuesten más.</span></div></div>
+          <div class="plan-item"><span class="plan-item-icon">🔧</span><div class="plan-item-text"><strong>Reparaciones Menores Incluidas</strong><span>Retoques de pintura, sellado de grietas y pequeñas reparaciones sin costo adicional.</span></div></div>
+          <div class="plan-item"><span class="plan-item-icon">💬</span><div class="plan-item-text"><strong>Asesoría Técnica Permanente</strong><span>Asistencia personalizada en cualquier momento del año. Siempre disponibles.</span></div></div>
+          <div class="plan-item"><span class="plan-item-icon">🚨</span><div class="plan-item-text"><strong>Atención Prioritaria en Urgencias</strong><span>Eres el primero en ser atendido cuando más lo necesitas.</span></div></div>
         </div>
-    </header>
+      </div>
+      <div class="plan-card reveal">
+        <h3>Plan de Mantenimiento Premium</h3>
+        <p>Un único pago anual, tranquilidad todo el año</p>
+        <div class="plan-discount"><sup>−</sup>15<sup>%</sup></div>
+        <p>Descuento en cualquier proyecto de remodelación mayor durante la vigencia de tu plan</p>
+        <a href="https://wa.me/56948000057?text=Hola%20Yohn!%20Quiero%20información%20sobre%20el%20Plan%20Anual%20de%20Mantenimiento%20Premium" class="btn-white" target="_blank">💬 Consultar por WhatsApp</a>
+        <p style="margin-top:14px;font-size:.74rem;opacity:.75">Precio según tipo y tamaño de tu propiedad</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección "Sobre Nosotros" con un enfoque más humano y pasional -->
-    <section id="about" class="py-16 px-4">
-        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6 text-blue-600">Nuestra Historia: La Pasión por lo Bien Hecho</h2>
-            <p class="text-lg text-gray-700 mb-4 leading-relaxed">No solo construimos; creamos. En cada proyecto, ponemos nuestra alma, nuestra experiencia y un profundo amor por el detalle. Nuestro viaje comenzó con la simple voluntad de aprender y superarnos, enfrentando cada desafío como una oportunidad para crecer. Lo que una vez fue un simple trabajo, se convirtió en una profesión. Hoy, cada remodelación, cada pared y cada acabado es un reflejo de nuestra dedicación y el compromiso inquebrantable de entregar un trabajo impecable. Porque tu hogar o negocio no es solo un espacio, es una extensión de tu vida, y merece la máxima calidad.</p>
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="container">
+    <div class="projects-header">
+      <div class="reveal">
+        <span class="section-tag">Trabajo Real · Sin Filtros</span>
+        <h2 class="section-title">Proyectos de los que nos enamoramos</h2>
+        <div class="section-line"></div>
+      </div>
+      <a href="#contacto" class="btn-gold-outline reveal">Iniciar mi proyecto →</a>
+    </div>
+
+    <!-- ANTES / DESPUÉS -->
+    <div class="ba-section reveal">
+      <p class="ba-title">📸 Transformación Real — Fachada Clínica Temuco</p>
+      <div class="ba-grid">
+        <div class="ba-item">
+          <img src="https://i.ibb.co/cXr9tHCS/clinica-fachada-antes.jpg" alt="Fachada antes de remodelación" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80'">
+          <span class="ba-label">Antes</span>
         </div>
-    </section>
-
-    <!-- Nueva sección "Nuestra Promesa" para generar confianza -->
-    <section id="promise" class="py-16 px-4 bg-blue-600 text-white">
-        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6">Nuestra Promesa para Ti</h2>
-            <p class="text-lg mb-8">Sabemos que cada inversión es importante. Por eso, te garantizamos:</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <div class="text-5xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-semibold mb-2">Calidad sin Compromiso</h3>
-                    <p class="text-sm opacity-80">Usamos los mejores materiales y técnicas para asegurar un resultado duradero y de alta calidad.</p>
-                </div>
-                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <div class="text-5xl mb-4">🤝</div>
-                    <h3 class="text-2xl font-semibold mb-2">Transparencia Total</h3>
-                    <p class="text-sm opacity-80">Te acompañamos en cada paso del proceso. No hay sorpresas, solo resultados claros y honestos.</p>
-                </div>
-                <div class="p-6 bg-blue-700 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <div class="text-5xl mb-4">✨</div>
-                    <h3 class="text-2xl font-semibold mb-2">Acabados de Lujo</h3>
-                    <p class="text-sm opacity-80">Nuestra atención al detalle es lo que nos diferencia. Cada acabado es impecable y digno de tu sueño.</p>
-                </div>
-            </div>
+        <div class="ba-item">
+          <img src="https://i.ibb.co/ccGdGRcb/clinica-fachada-despues.jpg" alt="Fachada después de remodelación" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'">
+          <span class="ba-label after">Después</span>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Sección de Servicios con descripciones más persuasivas y nuevos servicios -->
-    <section id="services" class="py-16 px-4 bg-gray-100">
-        <div class="container mx-auto max-w-6xl text-center">
-            <h2 class="text-4xl font-bold mb-12 text-blue-600" data-aos="fade-up">Diseñando y Creando Espacios Únicos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tarjeta de Servicio 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-right">
-                    <div class="text-5xl text-blue-500 mb-4">🏠</div>
-                    <h3 class="text-2xl font-semibold mb-2">Remodelación con Estilo</h3>
-                    <p class="text-gray-600">Transformamos tus espacios en ambientes modernos y llenos de vida, funcionales y hermosos que se adaptan a tu estilo de vida.</p>
-                </div>
-                <!-- Tarjeta de Servicio 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-up">
-                    <div class="text-5xl text-blue-500 mb-4">🧱</div>
-                    <h3 class="text-2xl font-semibold mb-2">Tabiquería de Alta Calidad</h3>
-                    <p class="text-gray-600">Organiza tu espacio con paredes divisorias sólidas y bien construidas, garantizando durabilidad y un aislamiento perfecto.</p>
-                </div>
-                <!-- Tarjeta de Servicio 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-left">
-                    <div class="text-5xl text-blue-500 mb-4">🔨</div>
-                    <h3 class="text-2xl font-semibold mb-2">Acabados que Enamoran</h3>
-                    <p class="text-gray-600">Cada detalle cuenta. Nos aseguramos de que cada acabado, desde la pintura hasta la instalación de puertas, sea impecable y profesional.</p>
-                </div>
-                <!-- NUEVO SERVICIO: Electricidad -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-right" data-aos-delay="200">
-                    <div class="text-5xl text-blue-500 mb-4">⚡</div>
-                    <h3 class="text-2xl font-semibold mb-2">Servicios Eléctricos Certificados</h3>
-                    <p class="text-gray-600">Ofrecemos soluciones eléctricas seguras y eficientes. Estamos inscritos en la Superintendencia de Electricidad y Combustibles (SEC), lo que garantiza un trabajo 100% legal y profesional.</p>
-                </div>
-                <!-- NUEVO SERVICIO: Asesoría Inmobiliaria -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl text-blue-500 mb-4">🔍</div>
-                    <h3 class="text-2xl font-semibold mb-2">Asesoría Inmobiliaria Profesional</h3>
-                    <p class="text-gray-600">Antes de comprar tu nueva casa, te ofrecemos un servicio de inspección pre-entrega. Te proporcionamos un informe técnico con bases legales para que tu inversión esté segura. Ideal para clientes y abogados.</p>
-                </div>
-                <!-- NUEVO SERVICIO: Asesoramiento en compras -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:scale-105" data-aos="fade-left" data-aos-delay="200">
-                    <div class="text-5xl text-blue-500 mb-4">🛒</div>
-                    <h3 class="text-2xl font-semibold mb-2">Asesoría en Compras de Materiales</h3>
-                    <p class="text-gray-600">No te preocupes por la elección de los materiales. Te asesoramos en cada compra para que obtengas la mejor calidad al mejor precio, asegurando que tu presupuesto rinda al máximo.</p>
-                </div>
-            </div>
+    <!-- VIDEOS REALES -->
+    <div class="video-section reveal">
+      <p class="ba-title">🎥 Proyectos en Video — Resultados Reales</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/BHSuBXgER34" allowfullscreen loading="lazy" title="Baño antes"></iframe>
+          <div class="video-caption"><span>Transformación de Baño</span><h4>Estado inicial — Baño antes de la remodelación completa</h4></div>
         </div>
-    </section>
-
-    <!-- Sección de Portafolio con textos más atractivos -->
-    <section id="portfolio" class="py-16 px-4">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Proyectos de los que Nos Enamoramos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Tarjeta 1: Remodelación de Baño -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Transformación Completa de un Baño</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden">
-                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/BHSuBXgER34" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Antes</span>
-                        </div>
-                        <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden">
-                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/x1nMSsNUb9A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Después</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tarjeta 2: Remodelación de Fachada de Clínica -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Una Fachada que Genera Confianza</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="relative w-full pb-[75%] rounded-lg overflow-hidden">
-                            <img src="https://i.ibb.co/cXr9tHCS/clinica-fachada-antes.jpg" alt="Fachada de la clínica antes de la remodelación, mostrando su estado anterior." class="absolute top-0 left-0 w-full h-full object-cover">
-                            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Antes</span>
-                        </div>
-                        <div class="relative w-full pb-[75%] rounded-lg overflow-hidden">
-                            <img src="https://i.ibb.co/ccGdGRcb/clinica-fachada-despues.jpg" alt="Fachada de la clínica después de la remodelación, con un aspecto moderno y profesional." class="absolute top-0 left-0 w-full h-full object-cover">
-                            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">Después</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3: De Bodega a Dormitorio -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="400">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Un Nuevo Espacio Lleno de Vida</h3>
-                    <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden mb-4">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/PuRm8A518Pw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-gray-600 mt-4">Transformamos una bodega de almacenamiento en un dormitorio cálido y funcional, demostrando que no hay límites para la creatividad.</p>
-                </div>
-                
-                <!-- Tarjeta 4: Ampliación de Segundo Piso -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl" data-aos="zoom-in" data-aos-delay="600">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Un Nuevo Nivel de Comodidad</h3>
-                    <div class="relative w-full pb-[56.25%] rounded-lg overflow-hidden mb-4">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/onI5l6S9Z70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-gray-600 mt-4">Ampliamos tu espacio para que tu familia crezca sin límites. Un segundo piso construido con la más alta calidad y un diseño perfecto.</p>
-                </div>
-
-            </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/x1nMSsNUb9A" allowfullscreen loading="lazy" title="Baño después"></iframe>
+          <div class="video-caption"><span>Transformación de Baño</span><h4>Resultado final — Baño moderno y funcional</h4></div>
         </div>
-    </section>
-
-    <!-- Sección de Testimonios con un diseño más atractivo -->
-    <section id="testimonials" class="py-16 px-4 bg-gray-100">
-        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-12 text-blue-600">Historias que Nos Inspiran</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-xl">
-                    <blockquote class="text-lg italic text-gray-700 leading-relaxed mb-4">
-                        "La calidad de Construyendo Sueños superó todas mis expectativas. Hicieron de mi casa el hogar que siempre soñé. Su dedicación y atención al detalle son inigualables. ¡Totalmente recomendados!"
-                    </blockquote>
-                    <cite class="font-bold text-blue-600">- María S. | Remodelación de Baño</cite>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <blockquote class="text-lg italic text-gray-700 leading-relaxed mb-4">
-                        "La transformación de mi bodega fue mágica. Lo que antes era un espacio sin vida, hoy es un dormitorio acogedor. Son un equipo de profesionales que aman lo que hacen."
-                    </blockquote>
-                    <cite class="font-bold text-blue-600">- Javier P. | Transformación de Bodega</cite>
-                </div>
-            </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/PuRm8A518Pw" allowfullscreen loading="lazy" title="Bodega a dormitorio"></iframe>
+          <div class="video-caption"><span>Transformación de Espacio</span><h4>Bodega convertida en dormitorio cálido y funcional</h4></div>
         </div>
-    </section>
-    
-    <!-- Sección de Planes de Mantenimiento Anual con un enfoque más rentable -->
-    <section id="plans" class="py-16 px-4 bg-gray-200">
-        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6 text-blue-600">Tu Mejor Inversión: Mantenimiento Anual</h2>
-            <p class="text-lg text-gray-700 mb-8">Un plan diseñado para que tu hogar siempre se vea perfecto y para que tú ahorres dinero a largo plazo. No es un gasto, es la forma más inteligente de proteger tu inversión.</p>
-            <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-blue-600">
-                <h3 class="text-3xl font-bold mb-4 text-gray-800">Plan de Mantenimiento Premium</h3>
-                <ul class="text-left text-gray-600 space-y-4 mb-6">
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
-                        <div>
-                            <span class="font-bold">Inspección Integral Bianual:</span> Nuestros expertos revisan cada rincón de tu propiedad para detectar problemas antes de que se conviertan en reparaciones costosas.
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
-                        <div>
-                            <span class="font-bold">Reparaciones Prioritarias sin Costo Adicional:</span> Retoques de pintura, sellado de grietas y pequeñas reparaciones cubiertas, ¡sin sorpresas en la factura!
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
-                        <div>
-                            <span class="font-bold">Asesoría de por Vida:</span> Recibe asistencia personalizada y asesoría técnica en cualquier momento del año. Estamos aquí para ti.
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 text-2xl">✅</span>
-                        <div>
-                            <span class="font-bold">Descuentos Exclusivos:</span> Accede a un 15% de descuento en cualquier proyecto de remodelación mayor que decidas realizar durante tu plan anual.
-                        </div>
-                    </li>
-                </ul>
-                <a href="#contact" class="w-full inline-block py-4 px-8 bg-blue-600 text-white rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
-                    ¡Protege tu inversión ahora!
-                </a>
-            </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/onI5l6S9Z70" allowfullscreen loading="lazy" title="Segundo piso"></iframe>
+          <div class="video-caption"><span>Ampliación</span><h4>Segundo piso construido con alta calidad estructural</h4></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección de contacto y formulario -->
-    <section id="contact" class="py-16 px-4 bg-gray-200">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600" data-aos="fade-up">Tu Próximo Gran Proyecto Comienza Aquí</h2>
-            <div class="flex flex-col lg:flex-row items-start justify-between gap-12">
-                
-                <!-- Contenedor de Información de Contacto y QR -->
-                <div class="w-full lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Conversemos</h3>
-                    <p class="text-gray-600 mb-6">
-                        Para consultas, cotizaciones o si tienes una idea que quieres hacer realidad, contáctanos. Estamos listos para escuchar tu sueño.
-                    </p>
-                    <div class="space-y-4 text-lg text-gray-700 mb-6">
-                        <p>
-                            <i class="fa-brands fa-whatsapp text-blue-600 mr-2"></i> 
-                            <a <a href="https://wa.me/56948000057?text=Hola,%20vengo%20de%20la%20web%20y%20necesito%20evaluar%20mi%20subsidio" style="background-color: #25d366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none;">
-   Consultar Subsidio por WhatsApp
-</a>
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-envelope text-blue-600 mr-2"></i> 
-                            <a href="mailto:construccionesdelsurcs@gmail.com" class="hover:underline">Correo Electrónico: construccionesdelsurcs@gmail.com</a>
-                        </p>
-                        <p>
-                            <i class="fa-brands fa-instagram text-blue-600 mr-2"></i> 
-                            <a href="https://www.instagram.com/construccionesdelsur.cs?igsh=MTB6cGJrMngzbWRveg==" class="hover:underline" target="_blank">Instagram: @construccionesdelsur.cs</a>
-                        </p>
-                        <p>
-                            <i class="fa-brands fa-facebook text-blue-600 mr-2"></i> 
-                            <a href="https://www.facebook.com/share/16ssuFJgJ2/" class="hover:underline" target="_blank">Facebook: /share/16ssuFJgJ2/</a>
-                        </p>
-                    </div>
-
-                    <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">Síguenos</h3>
-                    <img src="https://i.ibb.co/hF0rN2zX/QR-CS-IG.jpg" alt="Código QR para el perfil de Instagram" class="w-48 h-48 mx-auto rounded-lg">
-                </div>
-                
-                <!-- Contenedor del formulario -->
-                <div class="w-full lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Envía un Mensaje</h3>
-                    <p class="text-gray-600 text-center mb-8">Cuéntanos tu idea. Nosotros nos encargamos de los detalles.</p>
-                    
-                    <form id="contactForm" action="https://formspree.io/f/xnnzyked" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-lg">
-                        </div>
-            
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Dirección de correo electrónico</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-lg">
-                        </div>
-            
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Tu mensaje</label>
-                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg"></textarea>
-                        </div>
-            
-                        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto!">
-            
-                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg">
-                            Enviar mensaje
-                        </button>
-                    </form>
-            
-                    <div id="statusMessage" class="hidden mt-6 px-4 py-3 rounded-md relative" role="alert">
-                        <span class="block sm:inline"></span>
-                    </div>
-                </div>
-            </div>
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" class="reveal">
+      <span class="section-tag">Clientes Reales</span>
+      <h2 class="section-title">Historias que nos inspiran</h2>
+      <div class="section-line" style="margin:0 auto"></div>
+    </div>
+    <div class="testimonials-wrap">
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">"La calidad de Construcciones del Sur superó todas mis expectativas. Hicieron de mi casa el hogar que siempre soñé. Su dedicación y atención al detalle son inigualables. ¡Totalmente recomendados!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MS</div>
+          <div><div class="testimonial-stars">★★★★★</div><div class="testimonial-name">María S.</div><div class="testimonial-place">Remodelación Baño · Temuco</div></div>
         </div>
-    </section>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">"La transformación de mi bodega fue mágica. Lo que antes era un espacio sin vida, hoy es un dormitorio acogedor y funcional. Son un equipo de profesionales que aman lo que hacen."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JP</div>
+          <div><div class="testimonial-stars">★★★★★</div><div class="testimonial-name">Javier P.</div><div class="testimonial-place">Transformación Espacio · Temuco</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">"Usé el servicio de inspección pre-entrega antes de comprar mi casa. El informe técnico fue fundamental — encontraron problemas que no habíamos visto. Valen absolutamente cada peso."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CR</div>
+          <div><div class="testimonial-stars">★★★★★</div><div class="testimonial-name">Claudia R.</div><div class="testimonial-place">Inspección Inmobiliaria · Padre Las Casas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-6 px-4 rounded-t-3xl">
-        <p>&copy; 2024 Construyendo Sueños SPA. Todos los derechos reservados.</p>
-    </footer>
+<!-- BLOG -->
+<!-- MODALES DE ARTÍCULOS -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;backdrop-filter:blur(3px)"></div>
+<div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9001;width:min(720px,95vw);max-height:88vh;overflow-y:auto;background:#fff;padding:0;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+  <div id="modal-content"></div>
+</div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
+<section id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div class="reveal">
+        <span class="section-tag">Aprende con nosotros</span>
+        <h2 class="section-title">Consejos de Construcción</h2>
+        <div class="section-line"></div>
+      </div>
+    </div>
+    <div class="blog-grid">
+
+      <div class="blog-card reveal" onclick="openModal('humedad')" style="cursor:pointer">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Humedad paredes"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Mantenimiento</span>
+          <h3>5 señales de humedad que no debes ignorar en tu hogar</h3>
+          <p>La humedad no detectada puede costar 10 veces más. Te explicamos qué buscar antes de que sea tarde.</p>
+          <div class="blog-meta">Yohn Sepúlveda · Mayo 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" onclick="openModal('precios')" style="cursor:pointer">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Remodelación precios"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Remodelación</span>
+          <h3>¿Cuánto cuesta remodelar en Temuco? Guía de precios 2025</h3>
+          <p>Rangos reales y factores que influyen para que planifiques tu presupuesto sin sorpresas desagradables.</p>
+          <div class="blog-meta">Yohn Sepúlveda · Abril 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" onclick="openModal('inspeccion')" style="cursor:pointer">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Inspección inmobiliaria"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Inspección Inmobiliaria</span>
+          <h3>Por qué necesitas inspección técnica antes de comprar una casa</h3>
+          <p>Lo que los ojos no ven puede costarte millones. Un informe técnico es la mejor inversión antes de firmar.</p>
+          <div class="blog-meta">Yohn Sepúlveda · Marzo 2025 &nbsp;·&nbsp; <span style="color:var(--gold)">Leer artículo →</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-tag" style="color:var(--gold)">Hablemos</span>
+        <h2 class="section-title light">Tu próximo proyecto comienza aquí</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle" style="color:rgba(255,255,255,.65)">Cuéntanos tu idea. Presupuesto sin costo en menos de 24 horas.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text"><strong>Teléfono / WhatsApp</strong><a href="tel:+56948000057">+56 9 4800 0057</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text"><strong>Correo Electrónico</strong><a href="mailto:construccionesdelsurcs@gmail.com">construccionesdelsurcs@gmail.com</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text"><strong>Zona de Servicio</strong><span>Temuco y Región de La Araucanía</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🕐</div>
+            <div class="contact-detail-text"><strong>Horario</strong><span>Lunes–Viernes 8:00–18:00 · Sábado 9:00–14:00</span></div>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/share/16ssuFJgJ2/" class="contact-social" target="_blank">Fb</a>
+          <a href="https://www.instagram.com/construccionesdelsur.cs" class="contact-social" target="_blank">Ig</a>
+          <a href="https://wa.me/56948000057" class="contact-social" target="_blank">Wa</a>
+        </div>
+        <div class="qr-wrap">
+          <img src="https://i.ibb.co/hF0rN2zX/QR-CS-IG.jpg" alt="QR Instagram Construcciones del Sur" onerror="this.style.display='none'">
+          <p>Escanea y síguenos en Instagram</p>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <h3>Cuéntanos tu proyecto</h3>
+        <form id="contactForm" onsubmit="sendForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre completo" required></div>
+            <div class="form-group"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+56 9 XXXX XXXX"></div>
+          </div>
+          <div class="form-group"><label>Correo Electrónico</label><input type="email" name="email" placeholder="tu@correo.cl" required></div>
+          <div class="form-group">
+            <label>Tipo de Servicio</label>
+            <select name="servicio">
+              <option value="">Selecciona un servicio...</option>
+              <option>Construcción / Remodelación</option>
+              <option>Tabiquería</option>
+              <option>Carpintería y Terminaciones</option>
+              <option>Gasfitería PPR</option>
+              <option>Electricidad SEC</option>
+              <option>Pintura y Acabados</option>
+              <option>Inspección Inmobiliaria Pre-Entrega</option>
+              <option>Asesoría en Materiales</option>
+              <option>Plan Anual de Mantenimiento</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Tu proyecto</label><textarea name="mensaje" placeholder="Describe tu proyecto, ubicación y cualquier detalle relevante..." required></textarea></div>
+          <button type="submit" class="form-submit">💬 Enviar por WhatsApp</button>
+          <div class="form-success" id="formSuccess">✅ ¡Abriendo WhatsApp! Te respondemos en menos de 24 horas.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="color:white">Construcciones del Sur<span style="color:var(--gold)">Constructor Civil · Temuco</span></a>
+      <p>Soluciones integrales para construcción y mantención de propiedades. Calidad, transparencia y compromiso en cada proyecto. Inscritos SEC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Construcción y Remodelación</a></li>
+        <li><a href="#servicios">Tabiquería</a></li>
+        <li><a href="#servicios">Carpintería</a></li>
+        <li><a href="#servicios">Gasfitería PPR</a></li>
+        <li><a href="#servicios">Electricidad SEC</a></li>
+        <li><a href="#servicios">Inspección Inmobiliaria</a></li>
+        <li><a href="#servicios">Asesoría en Materiales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#quienes">Quiénes Somos</a></li>
+        <li><a href="#plan">Plan Anual</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#blog">Consejos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+56948000057">+56 9 4800 0057</a></li>
+        <li><a href="https://wa.me/56948000057" target="_blank">WhatsApp Directo</a></li>
+        <li><a href="mailto:construccionesdelsurcs@gmail.com">Gmail</a></li>
+        <li><a href="https://www.facebook.com/share/16ssuFJgJ2/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/construccionesdelsur.cs" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Construcciones del Sur · Todos los derechos reservados · Temuco, Chile</p>
+    <p>⚡ <a href="#servicios">Inscritos SEC</a> · 🏛️ Constructor Civil Titulado</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<div class="whatsapp-float">
+  <div class="whatsapp-popup" id="waPopup">
+    <div class="wa-header">
+      <div class="wa-avatar">👷</div>
+      <div><div class="wa-name">Yohn Sepúlveda</div><div class="wa-status">● En línea · Constructor Civil SEC</div></div>
+      <button class="wa-close" onclick="toggleWa()">✕</button>
+    </div>
+    <div class="wa-body">
+      <div class="wa-bubble"><strong>¡Hola! 👋</strong>Soy Yohn, Constructor Civil titulado e inscrito SEC. Cuéntame tu proyecto y te doy un presupuesto gratis en 24 horas. Sin compromiso.</div>
+    </div>
+    <div class="wa-footer">
+      <a href="https://wa.me/56948000057?text=Hola%20Yohn!%20Vengo%20de%20tu%20sitio%20web%20y%20me%20interesa%20un%20presupuesto" class="wa-link" target="_blank">💬 Escribir ahora</a>
+    </div>
+  </div>
+  <a class="whatsapp-btn" onclick="toggleWa()" href="javascript:void(0)" aria-label="WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+  // SLIDER
+  let cur = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  function goToSlide(n) {
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  }
+  function changeSlide(d) { goToSlide(cur + d); }
+  setInterval(() => changeSlide(1), 5500);
+
+  // NAV TOGGLE
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.navbar')) document.getElementById('navLinks').classList.remove('open');
+  });
+
+  // WHATSAPP POPUP
+  function toggleWa() { document.getElementById('waPopup').classList.toggle('open'); }
+  setTimeout(() => document.getElementById('waPopup').classList.add('open'), 9000);
+
+  // SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // COUNTERS
+  document.querySelectorAll('[data-count]').forEach(el => {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = +el.getAttribute('data-count');
+          let count = 0; const step = target / 50;
+          const tm = setInterval(() => {
+            count += step;
+            if (count >= target) { count = target; clearInterval(tm); }
+            el.textContent = Math.floor(count) + (el.getAttribute('data-count') === '100' ? '%' : '+');
+          }, 28);
+        }
+      });
+    }, { threshold: 0.5 }).observe(el);
+  });
+
+  // FORM → WHATSAPP
+  function sendForm(e) {
+    e.preventDefault();
+    const f = e.target;
+    const txt = `Hola Yohn! Soy ${f.nombre.value} (${f.email.value}${f.telefono.value ? ', Tel: ' + f.telefono.value : ''}). Servicio: ${f.servicio.value || 'No especificado'}. Mi proyecto: ${f.mensaje.value}`;
+    window.open(`https://wa.me/56948000057?text=${encodeURIComponent(txt)}`, '_blank');
+    document.getElementById('formSuccess').style.display = 'block';
+    f.reset();
+    setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 6000);
+  }
+
+  // MODALES BLOG
+  const articulos = {
+    humedad: {
+      tag: 'Mantenimiento',
+      titulo: '5 señales de humedad que no debes ignorar en tu hogar',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Mayo 2025',
+      img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+      contenido: `
+        <p>La humedad es el enemigo silencioso de tu hogar. Si no la detectas a tiempo, puede convertirse en un problema estructural que cueste 10 o incluso 20 veces más reparar. Como Constructor Civil, he visto cómo problemas pequeños se transforman en pesadillas por no actuar a tiempo.</p>
+        <h3>🔴 1. Manchas oscuras en techos o paredes</h3>
+        <p>Las manchas amarillas, marrones o grises en paredes y techos son la señal más visible. Generalmente indican una filtración activa desde el exterior, una cañería con goteo oculto o falta de impermeabilización en la losa. <strong>No las pintes encima</strong> — eso solo esconde el problema temporalmente.</p>
+        <h3>🔴 2. Olor a humedad persistente</h3>
+        <p>Si tu casa huele a "cerrado" aunque abras las ventanas, hay humedad acumulada en algún punto. Puede estar dentro de los muros, bajo el piso o en el cielo. El olor proviene de hongos y bacterias que ya están creciendo.</p>
+        <h3>🔴 3. Pintura que se hincha, descascara o ampolla</h3>
+        <p>La pintura descascarada no es solo estética. Es señal de que el agua está empujando desde adentro del muro. Esto es urgente: el muro ya está saturado de humedad.</p>
+        <h3>🔴 4. Piso que cruje, se levanta o deforma</h3>
+        <p>Si tienes pisos de madera o laminado que crujen más de lo normal, se ondula o tiene partes levantadas, hay humedad viniendo desde abajo. En Temuco y la región, la humedad del suelo es muy frecuente en sectores sin membrana aislante bajo el radier.</p>
+        <h3>🔴 5. Condensación frecuente en ventanas y rincones</h3>
+        <p>Si cada mañana tus ventanas amanecen empañadas por dentro y los rincones de los dormitorios tienen pelusa negra, tienes un problema de aislación térmica e higroscopia. Es tratable, pero necesita intervención profesional.</p>
+        <h3>✅ ¿Qué hacer?</h3>
+        <p>Lo primero es identificar el origen: ¿viene de afuera (lluvia, filtraciones) o de adentro (condensación, cañerías)? Una vez identificado, la solución puede ser desde impermeabilizar la fachada hasta cambiar cañerías o mejorar la ventilación.</p>
+        <p><strong>No esperes.</strong> Un diagnóstico temprano puede ahorrarte cientos de miles de pesos.</p>
+      `
+    },
+    precios: {
+      tag: 'Remodelación',
+      titulo: '¿Cuánto cuesta remodelar en Temuco? Guía de precios 2025',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Abril 2025',
+      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+      contenido: `
+        <p>Una de las preguntas más frecuentes que recibo es: <em>"¿Cuánto me va a costar remodelar?"</em> La respuesta honesta es: depende. Pero aquí te entrego rangos reales basados en proyectos que hemos ejecutado en Temuco y la Región de La Araucanía durante 2024-2025.</p>
+        <h3>🏠 Remodelación de Baño Completo</h3>
+        <p><strong>Rango: $1.800.000 – $4.500.000</strong><br>Incluye: cambio de revestimientos (piso y muro), cambio de artefactos sanitarios, gasfitería, instalación eléctrica de luminarias y ventilación, y terminaciones. El precio varía según el tamaño del baño y la calidad de los materiales elegidos.</p>
+        <h3>🍳 Remodelación de Cocina</h3>
+        <p><strong>Rango: $2.500.000 – $7.000.000</strong><br>Incluye: muebles de cocina a medida, mesón, revestimientos, gasfitería, electricidad y pintura. Una cocina bien remodelada puede aumentar el valor de tu propiedad hasta en un 15%.</p>
+        <h3>📐 Ampliación o Segundo Piso</h3>
+        <p><strong>Rango: $350.000 – $650.000 por m²</strong><br>Esto incluye estructura, techado, tabiques, instalaciones básicas y terminaciones estándar. Los permisos municipales se gestionan aparte.</p>
+        <h3>🎨 Pintura Interior Completa (casa de 80m²)</h3>
+        <p><strong>Rango: $400.000 – $900.000</strong><br>Incluye preparación de superficies, sellado de grietas, aplicación de 2 manos. El precio varía según el estado actual de la superficie.</p>
+        <h3>💡 Factores que encarecen un proyecto</h3>
+        <ul style="color:#6b7280;line-height:2;padding-left:20px">
+          <li>Obras estructurales (cambio de vigas, demoliciones)</li>
+          <li>Materiales de importación o premium</li>
+          <li>Dificultad de acceso al lugar de trabajo</li>
+          <li>Plazos muy ajustados</li>
+          <li>Descubrimientos ocultos (cañerías dañadas, problemas eléctricos)</li>
+        </ul>
+        <h3>✅ Consejo profesional</h3>
+        <p>Siempre pide un presupuesto detallado por ítem. Desconfía de presupuestos globales sin desglose — es ahí donde aparecen los cobros extras. En Construcciones del Sur, entregamos presupuestos transparentes sin letra chica.</p>
+      `
+    },
+    inspeccion: {
+      tag: 'Inspección Inmobiliaria',
+      titulo: 'Por qué necesitas una inspección técnica antes de comprar una casa',
+      autor: 'Yohn Sepúlveda · Constructor Civil · Marzo 2025',
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      contenido: `
+        <p>Comprar una casa es probablemente la decisión financiera más importante de tu vida. Y la mayoría de las personas la toma mirando solo lo que se ve: pintura, terminaciones, cuántos dormitorios tiene. Como Constructor Civil, te digo que lo que <strong>no ves</strong> es lo que puede costarte una fortuna.</p>
+        <h3>🔍 ¿Qué es una inspección técnica pre-entrega?</h3>
+        <p>Es una revisión profesional y exhaustiva de la propiedad antes de que firmes la escritura. Un Constructor Civil evaluará las condiciones estructurales, eléctricas, de gasfitería, impermeabilización, y terminaciones para entregarte un <strong>informe técnico con respaldo legal</strong>.</p>
+        <h3>❌ ¿Qué se detecta en una inspección?</h3>
+        <ul style="color:#6b7280;line-height:2.2;padding-left:20px">
+          <li>Fisuras o grietas estructurales que pueden indicar asentamiento del terreno</li>
+          <li>Humedades activas u ocultas en muros, techos o bajo el piso</li>
+          <li>Instalaciones eléctricas sin certificación o fuera de norma</li>
+          <li>Cañerías con corrosión, pérdidas o materiales obsoletos</li>
+          <li>Problemas de impermeabilización en cubierta y fundaciones</li>
+          <li>Terminaciones deficientes que ocultan daños mayores</li>
+          <li>Obras sin permiso que pueden generar problemas legales</li>
+        </ul>
+        <h3>💰 ¿Cuánto cuesta y cuánto ahorra?</h3>
+        <p>Una inspección técnica profesional cuesta entre <strong>$80.000 y $200.000</strong> según el tamaño de la propiedad. Pero puede ahorrarte desde $500.000 hasta $10.000.000 en reparaciones que descubres <em>después</em> de comprar. La relación costo-beneficio es inigualable.</p>
+        <h3>⚖️ Valor legal del informe</h3>
+        <p>El informe técnico que emitimos tiene respaldo profesional y puede ser utilizado por tu abogado para negociar el precio de compra, solicitar reparaciones al vendedor antes de firmar, o incluso para rescindir el contrato si los problemas son graves.</p>
+        <h3>✅ ¿Cuándo agendar la inspección?</h3>
+        <p><strong>Antes de firmar cualquier documento.</strong> Idealmente después de la oferta y antes de la escritura. Así tienes tiempo de negociar o retirarte si el resultado no es favorable.</p>
+        <p>En Construcciones del Sur realizamos inspecciones en Temuco, Padre Las Casas, Villarrica, Pucón y toda la Región de La Araucanía. Contáctanos para agendar.</p>
+      `
+    }
+  };
+
+  function openModal(id) {
+    const art = articulos[id];
+    const html = `
+      <div style="position:relative">
+        <img src="${art.img}" style="width:100%;height:240px;object-fit:cover;display:block">
+        <button onclick="closeModal()" style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,.5);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+        <span style="position:absolute;bottom:14px;left:20px;background:#c8a96e;color:white;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px">${art.tag}</span>
+      </div>
+      <div style="padding:32px 36px 36px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.55rem;color:#1a2332;line-height:1.25;margin-bottom:10px">${art.titulo}</h2>
+        <p style="color:#c8a96e;font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:28px;border-bottom:1px solid #f0ede7;padding-bottom:14px">✍️ ${art.autor}</p>
+        <div style="color:#6b7280;line-height:1.85;font-size:.95rem">${art.contenido}</div>
+        <div style="margin-top:32px;padding:20px;background:#f5f0e8;border-left:3px solid #c8a96e">
+          <p style="color:#1a2332;font-weight:600;margin-bottom:10px">¿Necesitas ayuda profesional?</p>
+          <a href="https://wa.me/56948000057?text=Hola%20Yohn!%20Le%C3%AD%20tu%20art%C3%ADculo%20y%20tengo%20una%20consulta" target="_blank" style="background:#25D366;color:white;padding:11px 24px;text-decoration:none;font-weight:700;font-size:.85rem;display:inline-block;border-radius:4px">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>`;
+    document.getElementById('modal-content').innerHTML = html;
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.getElementById('modal-box').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('modal-box').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+  // NAVBAR ACTIVE ON SCROLL
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100 && window.scrollY < s.offsetTop + s.offsetHeight) {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + s.id) a.classList.add('active');
         });
-
-        document.getElementById('contactForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const statusDiv = document.getElementById('statusMessage');
-            const statusSpan = statusDiv.querySelector('span');
-
-            // Resetear el estado
-            statusDiv.classList.add('hidden');
-            statusDiv.classList.remove('bg-green-100', 'border-green-400', 'text-green-700');
-            statusDiv.classList.remove('bg-red-100', 'border-red-400', 'text-red-700');
-            statusSpan.textContent = '';
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    form.reset();
-                    statusDiv.classList.remove('hidden');
-                    statusDiv.classList.add('bg-green-100', 'border-green-400', 'text-green-700');
-                    statusSpan.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
-                    setTimeout(() => {
-                        statusDiv.classList.add('hidden');
-                    }, 5000);
-                } else {
-                    const data = await response.json();
-                    let message = "¡Hubo un problema al enviar el formulario!";
-                    if (data.errors) {
-                        message = data.errors.map(error => error.message).join(', ');
-                    }
-                    statusDiv.classList.remove('hidden');
-                    statusDiv.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
-                    statusSpan.textContent = message;
-                }
-            } catch (error) {
-                statusDiv.classList.remove('hidden');
-                statusDiv.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
-                statusSpan.textContent = "¡Error de red! Por favor, revisa tu conexión.";
-            }
-        });
-    </script>
-
+      }
+    });
+  });
+</script>
 </body>
 </html>
 
